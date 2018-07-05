@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+{% load static from staticfiles %}
+
+{% block content %}
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Education</title>
+	<!-- Bootstrap core CSS -->
+  <link rel='stylesheet' href='{% static "css/bootstrap.min.css" %}'/>
+
+	<!-- Full Calender CSS -->
+		  <link rel='stylesheet' href='{% static "css/fullcalendar.css" %}'/>
+
+	<!-- Owl Carousel CSS -->
+		  <link rel='stylesheet' href='{% static "css/owl.carousel.css" %}'/>
+
+	<!-- Pretty Photo CSS -->
+		  <link rel='stylesheet' href='{% static "css/prettyPhoto.css" %}'/>
+
+	<!-- Bx-Slider StyleSheet CSS -->
+		  <link rel='stylesheet' href='{% static "css/jquery.bxslider.css" %}'/>
+
+	<!-- Font Awesome StyleSheet CSS -->
+		  <link rel='stylesheet' href='{% static "css/font-awesome.min.css" %}'/>
+		  <link rel='stylesheet' href='{% static "svg/style.css" %}'/>
+
+	<!-- Widget CSS -->
+		  <link rel='stylesheet' href='{% static "css/widget.css" %}'/>
+
+	<!-- Typography CSS -->
+		  <link rel='stylesheet' href='{% static "css/typography.css" %}'/>
+
+	<!-- Shortcodes CSS -->
+		  <link rel='stylesheet' href='{% static "css/shortcodes.css" %}'/>
+
+	<!-- Custom Main StyleSheet CSS -->
+		  <link rel='stylesheet' href='{% static "css/style.css" %}'/>
+
+	<!-- Color CSS -->
+		  <link rel='stylesheet' href='{% static "css/color.css" %}'/>
+
+	<!-- Responsive CSS -->
+		  <link rel='stylesheet' href='{% static "css/responsive.css" %}'/>
+
+	<!-- SELECT MENU -->
+		  <link rel='stylesheet' href='{% static "css/selectric.css" %}'/>
+
+	<!-- SIDE MENU -->
+		  <link rel='stylesheet' href='{% static "css/jquery.sidr.dark.css" %}'/>
+</head>
+
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+	<!--KF KODE WRAPPER WRAP START-->
+    <div class="kode_wrapper">
+		<!-- SIGNIN MODEL START -->
+		<div class="modal fade" id="signin-box" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<div class="modal-content">
+					<div class="user-box">
+						<h2>Register for free counseling</h2>
+						<!--FORM FIELD START-->
+						<form method='POST' action='/add-free-counselling/' enctype='multipart/form-data'>
+{% csrf_token %}
+						<div class="form">
+							<div class="input-container">
+								<span>
+									<h6 align="left" >Name:</h6>
+								{{form.name}}
+									</span>
+							</div>
+
+							<div class="input-container">
+								<h6 align="left">E-mail:</h6>
+								{{form.email}}
+							</div>
+							<div class="input-container">
+								<h6 align="left">Mobile No.:</h6>
+								{{form.mobile}}
+							</div>
+
+							<div class="input-container">
+								<button class="btn-style">Register</button>
+							</div>
+						</div>
+						</form>
+						<!--FORM FIELD END-->
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+    <!-- SIGNIN MODEL END -->
+
+
+    	<!--HEADER START-->
+    	<header id="header_2">
+    		<!--kode top bar start-->
+    		<div class="top_bar_2">
+	    		<div class="container">
+	    			<div class="row">
+	    				<div class="col-md-4" style="margin-top: 10px; text-color: #ffffff;">
+	    					<h4>Contact us for free counseling</h4>
+	    				</div>
+	    				<div class="col-md-8 hide-email" style="margin-top: -20px; text-color: #ffffff;">
+    						<ul class="login_wrap">
+    							<li class="email"><h6><i class="fa fa-envelope"></i>E-mail: poransathikahipan@gmail.com</h6></li>
+    							<li>  <h2>    </h2> </li>
+    							<li><h6><i class="fa fa-phone"></i> Mb: 92730678</h6></li>
+								<li><a href="#" data-toggle="modal" data-target="#signin-box"><i class="fa fa-sign-in"></i>Sign In</a></li>
+    							<li><a href=""><img src="./images/fb.png" height="35" width="35"></li>
+    							<li><a href=""><img src="./images/insta.png" height="35" width="35"></li>
+    						</ul>
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+    		<!--kode top bar end-->
+
+	    	<!--kode navigation start-->
+    		<div class="kode_navigation">
+
+    			<div>
+    				<div class="row">
+    					<div class="col-md-2">
+    						<div class="logo_wrap">
+    							<a href="/"><img src='{% static 'img/logo.png' %}' alt=""/></a>
+    						</div>
+    					</div>
+    					<div class="col-md-10">
+    						<!--kode nav_2 start-->
+    						<div class="nav_2" id="navigation">
+    							<ul>
+    								<li><a href="/">home</a></li>
+									<li><a>Success Story <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+		                            	<ul>
+		                                    <li><a href="/sandip-gund">The Person</a></li>
+		                                    <li><a href="/mission-digital-school">Mission Digital School</a></li>
+		                                </ul>
+		                            </li>
+		                            <li><a href="/e-solutions/">E-Solution</a></li>
+		                            <li><a href="#">Innovations</a></li>
+		                            <li><a href="#">Achievements</a></li>
+		                            <li><a>gallery <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+		                            	<ul>
+											<li><a href="/our-gallery">Our gallery</a></li>
+		                                	<li><a href="/photos">Photos</a></li>
+		                                    <li><a target="blank" href="https://www.youtube.com/user/MrVivekBindra">Videos</a></li>
+		                                    <li><a href="/media">Media</a></li>
+		                                </ul>
+		                            </li>
+									<li><a href="#">Training <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+		                            	<ul>
+		                                    <li><a href="contactus.html">On Demand Trianing</a></li>
+		                                    <li><a href="contactus-2.html">Photos</a></li>
+		                                </ul>
+		                            </li>
+		                            <li><a href="/blog">Blog</a></li>
+    							</ul>
+    						</div>
+    						<!--kode nav_2 end-->
+    					</div>
+    				</div>
+					<div id="mobile-header">
+                	<a id="responsive-menu-button" href="#sidr-main"><i class="fa fa-bars"></i></a>
+                </div>
+    			</div>
+    		</div>
+    		<!--kode navigation end-->
+		</header>
+		<!--HEADER END-->
+
+
+		<div class="edu2_main_bn_wrap">
+			<div id="owl-demo-main" class="owl-carousel owl-theme">
+				<div class="item">
+						<img src='{% static 'img/banner/1.jpg' %}' >
+				</div>
+				<div class="item">
+						<img src='{% static 'img/banner/2.jpg' %}' >
+				</div>
+				<div class="item">
+						<img src='{% static 'img/banner/3.jpg' %}' >
+				</div>
+				<div class="item">
+						<img src='{% static 'img/banner/4.jpg' %}' >
+				</div>
+				<div class="item">
+						<img src='{% static 'img/banner/5.jpg' %}' >
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<section>
+				<div class="container">
+					<div class="row">
+						<!-- HEADING 2 START-->
+						<div class="col-md-12">
+							<div class="kf_edu2_heading1">
+								<h3>Vision</h3>
+							</div>
+						</div>
+						<!-- HEADING 2 END-->
+								<div class="item">
+									<!-- TESTEMONIAL SLIDER WRAP START-->
+									<div class="edu_testemonial_wrap">
+										<figure><img src='{% static 'img/vision1.png' %}' alt=""/></figure>
+										<div class="kode-text" style="text-align:center; margin-bottom: -20px;">
+											<!-- <p>To consolidate constructivism in classroom the concept of digital classroom is rendered in schools.The
+											main purpose of this concept is to make teaching learning process objective based and joyful with the help of
+											modern technical hardware and software devices.</p> -->
+											<a>To consolidate constructivism in classroom the concept of digital classroom is rendered in schools.The
+											main purpose of this concept is to make teaching learning process objective based and joyful with the help of
+											modern technical hardware and software devices.</a>
+										</div>
+									</div>
+									<!-- TESTEMONIAL SLIDER WRAP END-->
+								</div>
+					</div>
+				</div>
+
+
+
+				<div class="container">
+					<div class="row">
+						<!-- HEADING 2 START-->
+						<div class="col-md-12">
+							<div class="kf_edu2_heading1">
+								<h3>Mission</h3>
+							</div>
+						</div>
+						<!-- HEADING 2 END-->
+								<div class="item">
+									<!-- TESTEMONIAL SLIDER WRAP START-->
+									<div class="edu_testemonial_wrap">
+										<figure><img src='{% static 'img/mission.png' %}' alt="" /></figure>
+										<div class="kode-text" style="text-align:center; margin-bottom: -20;">
+											<a>To develop the eternal system for enriching the quality and functionality in education with the help of ICT</a>
+										</div>
+									</div>
+									<!-- TESTEMONIAL SLIDER WRAP END-->
+								</div>
+					</div>
+				</div>
+
+
+				<div class="container">
+					<div class="row">
+						<!-- HEADING 2 START-->
+						<div class="col-md-12">
+							<div class="kf_edu2_heading1">
+								<h3>The Person</h3>
+							</div>
+						</div>
+						<!-- HEADING 2 END-->
+								<div class="item">
+									<!-- TESTEMONIAL SLIDER WRAP START-->
+									<div class="edu_testemonial_wrap">
+										<figure><img src="extra-images/testemonial.1.jpg" alt=""/></figure>
+										<div class="kode-text">
+											<p>During the early years of my life, I have had numerous opportunities to choose different
+professions, however I chose the teaching profession. The quest for knowledge and a desire to
+contribute to the society made me decide to engage into the noble profession of teaching.</p>
+<p>
+In 2009, I was recruited in a Zilla Parishad School in Pashtepada as a teacher. In the course of
+my career I have undertaken many projects to bring the rural and tribal people into
+mainstream education and raise their standard. I have had to face many problems like
+absenteeism and migration of students; drug addiction, superstitions, illiteracy prevailing
+around. However, these challenges along with leaking roofs and broken walls actually
+motivated me. We could overcome these problems with the help of education, social
+workshops and orientation programms focusing on social awareness.</p>
+											<a class="readmore" href="/sandip-gund">
+   										read full story...
+    										<i class="fa fa-long-arrow-right"></i>
+    									</a>
+										</div>
+									</div>
+									<!-- TESTEMONIAL SLIDER WRAP END-->
+								</div>
+					</div>
+				</div>
+			</section>
+
+
+
+
+		<div class="kf_content_wrap">
+
+			<section class="edu_student_wrap_bg">
+				<div class="container">
+					<div class="kf_edu2_heading1">
+						<h3 style="color:#000;">E-Solutions</h3>
+					</div>
+					<div class="student_slider_wrap">
+						<div class="row">
+							<div class="col-md-9">
+								<ul class="bxslider">
+									<li>
+										<!-- STUDENT SLIDER DES START-->
+										<div class="student_slider_des">
+											<img src='{% static 'img/e-sol/e1.jpg' %}' alt=""/>
+										</div>
+										<!-- STUDENT SLIDER DES END-->
+									</li>
+
+									<li>
+										<!-- STUDENT SLIDER DES START-->
+										<div class="student_slider_des">
+											<!-- HEADING 1 END-->
+											<img src='{% static 'img/e-sol/e2.jpg' %}' alt=""/>
+										</div>
+										<!-- STUDENT SLIDER DES END-->
+									</li>
+
+									<li>
+										<!-- STUDENT SLIDER DES START-->
+										<div class="student_slider_des">
+											<!-- HEADING 1 START-->
+											<div class="std_name_des">
+												<img src='{% static 'img/e-sol/e3.jpg' %}' alt=""/>
+											</div>
+										</div>
+										<!-- STUDENT SLIDER DES END-->
+									</li>
+
+									<li>
+										<!-- STUDENT SLIDER DES START-->
+										<div class="student_slider_des">
+											<!-- HEADING 1 START-->
+											<div class="std_name_des">
+												<img src='{% static 'img/e-sol/e4.jpg' %}' alt=""/>
+											</div>
+										</div>
+										<!-- STUDENT SLIDER DES END-->
+									</li>
+
+									<li>
+										<!-- STUDENT SLIDER DES START-->
+										<div class="student_slider_des">
+											<!-- HEADING 1 START-->
+											<div class="std_name_des">
+												<img src='{% static 'img/e-sol/e5.jpg' %}' alt=""/>
+											</div>
+										</div>
+										<!-- STUDENT SLIDER DES END-->
+									</li>
+									<li>
+										<!-- STUDENT SLIDER DES START-->
+										<div class="student_slider_des">
+											<!-- HEADING 1 START-->
+											<div class="std_name_des">
+												<img src='{% static 'img/e-sol/e6.jpg' %}' alt=""/>
+											</div>
+										</div>
+										<!-- STUDENT SLIDER DES END-->
+									</li>
+								</ul>
+							</div>
+
+
+
+							<div class="col-md-3">
+								<!-- STUDENT SLIDER THUMB DES START-->
+								<div class="student_slider_thumb">
+									<div class="row">
+										<div id="bx-pager">
+
+
+											<div class="col-md-12 col-sm-3">
+												<a data-slide-index="0" href="">
+												<div class="kf_cur_catg_des color-1">
+													<div class="kf_cur_catg_capstion">
+														<img src='{% static 'img/e-sol/e1.jpg' %}' alt=""/>
+													</div>
+												</div>
+												</a>
+											</div>
+
+											<!--COURSE CATEGORIES DES START-->
+											<div class="col-md-12 col-sm-3">
+												<a data-slide-index="1" href="">
+												<div class="kf_cur_catg_des color-2">
+													<img src='{% static 'img/e-sol/e2.jpg' %}' alt=""/>
+												</div>
+											</a>
+											</div>
+											<!--COURSE CATEGORIES DES END-->
+
+											<!--COURSE CATEGORIES DES START-->
+											<div class="col-md-12 col-sm-3">
+												<a data-slide-index="2" href="">
+												<div class="kf_cur_catg_des color-3">
+													<div class="kf_cur_catg_capstion">
+														<img src='{% static 'img/e-sol/e3.jpg' %}' alt=""/>
+													</div>
+												</div>
+												</a>
+											</div>
+											<!--COURSE CATEGORIES DES END-->
+
+											<!--COURSE CATEGORIES DES START-->
+											<div class="col-md-12 col-sm-3">
+												<a data-slide-index="3" href="">
+												<div class="kf_cur_catg_des color-4">
+													<div class="kf_cur_catg_capstion">
+														<img src='{% static 'img/e-sol/e4.jpg' %}' alt=""/>
+													</div>
+												</div>
+												</a>
+											</div>
+											<!--COURSE CATEGORIES DES END-->
+
+											<!--COURSE CATEGORIES DES START-->
+											<div class="col-md-12 col-sm-3">
+												<a data-slide-index="4" href="">
+												<div class="kf_cur_catg_des color-5">
+													<div class="kf_cur_catg_capstion">
+														<img src='{% static 'img/e-sol/e5.jpg' %}' alt=""/>
+													</div>
+												</div>
+												</a>
+											</div>
+											<!--COURSE CATEGORIES DES END-->
+
+											<!--COURSE CATEGORIES DES START-->
+											<div class="col-md-12 col-sm-3">
+												<a data-slide-index="5" href="">
+												<div class="kf_cur_catg_des color-6">
+													<div class="kf_cur_catg_capstion">
+														<img src='{% static 'img/e-sol/e6.jpg' %}' alt=""/>
+													</div>
+												</div>
+											</a>
+											</div>
+											<!--COURSE CATEGORIES DES END-->
+										</div>
+									</div>
+								</div>
+								<!-- STUDENT SLIDER THUMB DES END-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="loadmore" style="margin-top:10px;">
+						<a href="/photos" class="btn-3">Find Out More E-solutions</a>
+					</div>
+
+			<!--COURSE OUTER WRAP END-->
+
+
+
+
+			<section>
+				<div class="container">
+					<div class="row">
+						<!-- HEADING 1 START-->
+						<div class="col-md-12">
+							<div class="kf_edu2_heading1">
+								<h3>Photo gallery</h3>
+							</div>
+						</div>
+						<!-- HEADING 1 END-->
+
+						<!-- FACULTY SLIDER WRAP START-->
+						<div class="edu2_faculty_wrap">
+							<div id="owl-demo-81" class="owl-carousel owl-theme">
+
+								{% for obj in all %}
+								<div class="item">
+									<!-- FACULTY DES START-->
+									<div class="edu2_faculty_des">
+										<figure><img src='{{obj.image.url}}' %}' alt=""/>
+											<figcaption>
+												<a href="#"><i class="fa fa-search"></i></a>
+											</figcaption>
+										</figure>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#">Danny Awesome</a></h6>
+											<strong>Manager</strong>
+											<p>{{ obj.desc }}</p>
+										</div>
+									</div>
+									<!-- FACULTY DES END-->
+								</div>
+							{% endfor %}
+
+							</div>
+						</div>
+						<!-- FACULTY SLIDER WRAP END-->
+					<div class="loadmore" style="margin-top:30px;">
+						<a href="/photos" class="btn-3">Find Out More Photos</a>
+					</div>
+
+					</div>
+				</div>
+			</section>
+
+
+
+			<section style="background-color:#efefef;">
+				<div class="container">
+					<div class="row">
+						<!-- HEADING 1 START-->
+						<div class="col-md-12">
+							<div class="kf_edu2_heading1">
+								<h3>Video gallery</h3>
+							</div>
+						</div>
+						<!-- HEADING 1 END-->
+
+						<!-- FACULTY SLIDER WRAP START-->
+						<div class="col-md-12">
+								<div class="item col-md-6">
+									<!-- FACULTY DES START-->
+									<!--<div class="edu2_faculty_des">-->
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/W1hoGEBccOA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#">Simon Grishaber</a></h6>
+											<strong>Health Teacher</strong>
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
+										</div>
+									<!--</div>-->
+									<!-- FACULTY DES END-->
+								</div>
+
+								<div class="item col-md-6">
+									<!-- FACULTY DES START-->
+									<div class="edu2_faculty_des">
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/W1hoGEBccOA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#">Simon Grishaber</a></h6>
+											<strong>Health Teacher</strong>
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
+										</div>
+									</div>
+									<!-- FACULTY DES END-->
+								</div>
+
+						</div>
+						<!-- FACULTY SLIDER WRAP END-->
+						<div class="loadmore">
+						<a href="https://www.youtube.com/user/MrVivekBindra" target="blank" class="btn-3">Find Out More Videos</a>
+					</div>
+					</div>
+				</div>
+			</section>
+
+
+			<section>
+				<div class="container">
+					<div class="row">
+						<!-- HEADING 1 START-->
+						<div class="col-md-12">
+							<div class="kf_edu2_heading1">
+								<h3>Awards & Achievement</h3>
+							</div>
+						</div>
+						<!-- HEADING 1 END-->
+
+						<!-- FACULTY SLIDER WRAP START-->
+						<div class="edu2_faculty_wrap">
+							<div id="owl-demo-83" class="owl-carousel owl-theme">
+								<div class="item">
+									<!-- FACULTY DES START-->
+									<div class="edu2_faculty_des">
+										<figure><img src='{% static 'img/award/a1.jpg' %}' alt=""/>
+											<figcaption>
+												<a href="#"><i class="fa fa-search"></i></a>
+											</figcaption>
+										</figure>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#">Danny Awesome</a></h6>
+											<strong>Manager</strong>
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
+										</div>
+									</div>
+									<!-- FACULTY DES END-->
+								</div>
+
+								<div class="item">
+									<!-- FACULTY DES START-->
+									<div class="edu2_faculty_des">
+										<figure><img src='{% static 'img/award/a5.jpg' %}' alt=""/>
+											<figcaption>
+												<a href="#"><i class="fa fa-search"></i></a>
+											</figcaption>
+										</figure>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#">Kimberly Richiez</a></h6>
+											<strong>Russian Teacher</strong>
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
+										</div>
+									</div>
+									<!-- FACULTY DES END-->
+								</div>
+
+								<div class="item">
+									<!-- FACULTY DES START-->
+									<div class="edu2_faculty_des">
+										<figure><img src='{% static 'img/award/a11.jpg' %}' alt=""/>
+											<figcaption>
+												<a href="#"><i class="fa fa-search"></i></a>
+											</figcaption>
+										</figure>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#">Dylan Taylor</a></h6>
+											<strong>English Teacher</strong>
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
+										</div>
+									</div>
+									<!-- FACULTY DES END-->
+								</div>
+
+								<div class="item">
+									<!-- FACULTY DES START-->
+									<div class="edu2_faculty_des">
+										<figure><img src='{% static 'img/award/a17.jpg' %}' alt=""/>
+											<figcaption>
+												<a href="#"><i class="fa fa-search"></i></a>
+											</figcaption>
+										</figure>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#">Simon Grishaber</a></h6>
+											<strong>Health Teacher</strong>
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
+										</div>
+									</div>
+									<!-- FACULTY DES END-->
+								</div>
+
+								<div class="item">
+									<!-- FACULTY DES START-->
+									<div class="edu2_faculty_des">
+										<figure><img src='{% static 'img/award/a3.jpg' %}' alt=""/>
+											<figcaption>
+												<a href="#"><i class="fa fa-search"></i></a>
+											</figcaption>
+										</figure>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#">Simon Grishaber</a></h6>
+											<strong>Health Teacher</strong>
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
+										</div>
+									</div>
+									<!-- FACULTY DES END-->
+								</div>
+
+								<div class="item">
+									<!-- FACULTY DES START-->
+									<div class="edu2_faculty_des">
+										<figure><img src='{% static 'img/award/a2.jpg' %}' alt=""/>
+											<figcaption>
+												<a href="#"><i class="fa fa-search"></i></a>
+											</figcaption>
+										</figure>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#">Simon Grishaber</a></h6>
+											<strong>Health Teacher</strong>
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
+										</div>
+									</div>
+									<!-- FACULTY DES END-->
+								</div>
+
+								<div class="item">
+									<!-- FACULTY DES START-->
+									<div class="edu2_faculty_des">
+										<figure><img src='{% static 'img/award/a6.jpg' %}' alt=""/>
+											<figcaption>
+												<a href="#"><i class="fa fa-search"></i></a>
+											</figcaption>
+										</figure>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#">Simon Grishaber</a></h6>
+											<strong>Health Teacher</strong>
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
+										</div>
+									</div>
+									<!-- FACULTY DES END-->
+								</div>
+
+								<div class="item">
+									<!-- FACULTY DES START-->
+									<div class="edu2_faculty_des">
+										<figure><img src='{% static 'img/award/a16.jpg' %}' alt=""/>
+											<figcaption>
+												<a href="#"><i class="fa fa-search"></i></a>
+											</figcaption>
+										</figure>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#">Simon Grishaber</a></h6>
+											<strong>Health Teacher</strong>
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
+										</div>
+									</div>
+									<!-- FACULTY DES END-->
+								</div>
+							</div>
+						</div>
+						<!-- FACULTY SLIDER WRAP END-->
+					</div>
+				</div>
+				<div class="loadmore">
+						<a href="" class="btn-3" style="margin-top:30px;">Find Out More awards & Achievements</a>
+					</div>
+
+			</section>
+
+
+
+			<section  style="background-color:#efefef;">
+				<div class="container">
+					<div class="row">
+
+						<div class="modal fade" id="modal1" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <!-- Modal content-->
+						        <div class="modal-content">
+						        	<div class="modal-header">
+						          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						          		<strong>news</strong>
+						        	</div>
+						        	<div class="modal-body">
+						        		<img class="img-responsive" src='{% static 'img/news/n1.jpg' %}' style=" margin:auto;" alt=""/>
+										<p>{{ obj.desc }}</p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+
+						<div class="modal fade" id="modal2" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <!-- Modal content-->
+						        <div class="modal-content">
+						        	<div class="modal-header">
+						          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						          		<strong>news</strong>
+						        	</div>
+						        	<div class="modal-body">
+						        		<img class="img-responsive" src='{% static 'img/news/n7.jpg' %}' style="margin:auto;" alt=""/>
+										<p>{{ obj.desc }}</p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+
+						<div class="modal fade" id="modal3" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <!-- Modal content-->
+						        <div class="modal-content">
+						        	<div class="modal-header">
+						          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						          		<strong>news</strong>
+						        	</div>
+						        	<div class="modal-body">
+						        		<img class="img-responsive" src='{% static 'img/news/n16.jpg' %}' style=" margin:auto;" alt=""/>
+										<p>{{ obj.desc }}</p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+						<!-- HEADING 1 START-->
+						<div class="col-md-12">
+							<div class="kf_edu2_heading1">
+								<h3>Media gallery</h3>
+							</div>
+						</div>
+						<!-- HEADING 1 END-->
+
+						<!-- FACULTY SLIDER WRAP START-->
+						<div class="col-md-12">
+								<div class="item col-md-4">
+									<!-- FACULTY DES START-->
+									<div class="edu2_faculty_des">
+										<figure><img src='{% static 'img/news/n1.jpg' %}' alt=""/>
+											<figcaption>
+												<a href="#" data-toggle="modal" data-target="#modal1" ><i class="fa fa-search"></i></a>
+											</figcaption>
+										</figure>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#" data-toggle="modal" data-target="#modal1">Danny Awesome</a></h6>
+											<strong>Manager</strong>
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
+										</div>
+									</div>
+									<!-- FACULTY DES END-->
+								</div>
+
+								<div class="item col-md-4">
+									<!-- FACULTY DES START-->
+									<div class="edu2_faculty_des">
+										<figure><img src='{% static 'img/news/n7.jpg' %}' alt=""/>
+											<figcaption>
+												<a href="#" data-toggle="modal" data-target="#modal2"><i class="fa fa-search"></i></a>
+											</figcaption>
+										</figure>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#" data-toggle="modal" data-target="#modal2">Kimberly Richiez</a></h6>
+											<strong>Russian Teacher</strong>
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
+										</div>
+									</div>
+									<!-- FACULTY DES END-->
+								</div>
+
+								<div class="item col-md-4">
+									<!-- FACULTY DES START-->
+									<div class="edu2_faculty_des">
+										<figure><img src='{% static 'img/news/n16.jpg' %}' alt=""/>
+											<figcaption>
+												<a href="#" data-toggle="modal" data-target="#modal3"><i class="fa fa-search"></i></a>
+											</figcaption>
+										</figure>
+										<div class="edu2_faculty_des2">
+											<h6><a href="#" data-toggle="modal" data-target="#modal3">Dylan Taylor</a></h6>
+											<strong>English Teacher</strong>
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
+										</div>
+									</div>
+									<!-- FACULTY DES END-->
+								</div>
+						</div>
+						<!-- FACULTY SLIDER WRAP END-->
+						<div class="loadmore">
+							<a href="/media" class="btn-3">Find Out More News Media</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<!--GALLERY SECTION START-->
+			<section class="kode-gallery-section">
+				<!-- HEADING 2 START-->
+                <div class="col-md-12">
+                    <div class="kf_edu2_heading2">
+                        <h3><a href="our-gallery.html">Our Gallery</a></h3>
+						<p>Student gallery of the year past graduated passouts</p>
+                    </div>
+                </div>
+                <!-- HEADING 2 END-->
+                <!-- EDU2 GALLERY WRAP START-->
+                <div class="edu2_gallery_wrap gallery">
+                   
+                    <!-- EDU2 GALLERY DES START-->
+                    <div class="gallery3">
+                    
+                        <div class="filterable-item all 2 1 9 col-md-3 col-sm-4 col-xs-12 no_padding">
+                            <div class="edu2_gallery_des">
+                                <figure>
+                                    <img alt="" src="extra-images/home-gallery1.jpg">
+                                    <figcaption>
+                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery1.jpg"><i class="fa fa-eye"></i></a>
+                                        <a href="#"><i class="fa fa-link"></i></a>
+                                        <h5>Lorem Ipsum Proin</h5>
+                                        <p>Convocation</p>
+                                    </figcaption>
+                                </figure>
+                            </div>	
+                        </div>
+                        <div class="filterable-item all 3 2 1 col-md-3 col-sm-4 col-xs-12 no_padding">
+                            <div class="edu2_gallery_des">
+                                <figure>
+                                    <img alt="" src="extra-images/home-gallery2.jpg">
+                                    <figcaption>
+                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery2.jpg"><i class="fa fa-eye"></i></a>
+                                        <a href="#"><i class="fa fa-link"></i></a>
+                                        <h5>Lorem Ipsum Proin</h5>
+                                        <p>Convocation</p>
+                                    </figcaption>
+                                </figure>
+                            </div>	
+                        </div>
+                        <div class="filterable-item all 4 2 9 col-md-3 col-sm-4 col-xs-12 no_padding">
+                            <div class="edu2_gallery_des">
+                                <figure>
+                                    <img alt="" src="extra-images/home-gallery3.jpg">
+                                    <figcaption>
+                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery3.jpg"><i class="fa fa-eye"></i></a>
+                                        <a href="#"><i class="fa fa-link"></i></a>
+                                        <h5>Lorem Ipsum Proin</h5>
+                                        <p>Convocation</p>
+                                    </figcaption>
+                                </figure>
+                            </div>	
+                        </div>
+                        <div class="filterable-item all 9 8 7 col-md-3 col-sm-4 col-xs-12 no_padding">
+                            <div class="edu2_gallery_des">
+                                <figure>
+                                    <img alt="" src="extra-images/home-gallery4.jpg">
+                                    <figcaption>
+                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery4.jpg"><i class="fa fa-eye"></i></a>
+                                        <a href="#"><i class="fa fa-link"></i></a>
+                                        <h5>Lorem Ipsum Proin</h5>
+                                        <p>Convocation</p>
+                                    </figcaption>
+                                </figure>
+                            </div>	
+                        </div>
+                        <div class="filterable-item all 3 2 4 col-md-3 col-sm-4 col-xs-12 no_padding">
+                            <div class="edu2_gallery_des">
+                                <figure>
+                                    <img alt="" src="extra-images/home-gallery5.jpg">
+                                    <figcaption>
+                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery5.jpg"><i class="fa fa-eye"></i></a>
+                                        <a href="#"><i class="fa fa-link"></i></a>
+                                        <h5>Lorem Ipsum Proin</h5>
+                                        <p>Convocation</p>
+                                    </figcaption>
+                                </figure>
+                            </div>	
+                        </div>
+                        <div class="filterable-item all 4 5 7 col-md-3 col-sm-4 col-xs-12 no_padding">
+                            <div class="edu2_gallery_des">
+                                <figure>
+                                    <img alt="" src="extra-images/home-gallery6.jpg">
+                                    <figcaption>
+                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery6.jpg"><i class="fa fa-eye"></i></a>
+                                        <a href="#"><i class="fa fa-link"></i></a>
+                                        <h5>Lorem Ipsum Proin</h5>
+                                        <p>Convocation</p>
+                                    </figcaption>
+                                </figure>
+                            </div>	
+                        </div>
+                        <div class="filterable-item all 3 5 7 9 col-md-3 col-sm-4 col-xs-12 no_padding">
+                            <div class="edu2_gallery_des">
+                                <figure>
+                                    <img alt="" src="extra-images/home-gallery7.jpg">
+                                    <figcaption>
+                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery7.jpg"><i class="fa fa-eye"></i></a>
+                                        <a href="#"><i class="fa fa-link"></i></a>
+                                        <h5>Lorem Ipsum Proin</h5>
+                                        <p>Convocation</p>
+                                    </figcaption>
+                                </figure>
+                            </div>	
+                        </div>
+                        <div class="filterable-item all 2 4 6 8 col-md-3 col-sm-4 col-xs-12 no_padding">
+                            <div class="edu2_gallery_des">
+                                <figure>
+                                    <img alt="" src="extra-images/home-gallery3.jpg">
+                                    <figcaption>
+                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery3.jpg"><i class="fa fa-eye"></i></a>
+                                        <a href="#"><i class="fa fa-link"></i></a>
+                                        <h5>Lorem Ipsum Proin</h5>
+                                        <p>Convocation</p>
+                                    </figcaption>
+                                </figure>
+                            </div>	
+                        </div>
+                    </div>
+                    
+                <!-- EDU2 GALLERY WRAP END-->
+                </div>
+                <div class="loadmore">
+						<a href="our-gallery.html" class="btn-3">Load More</a>
+					</div>
+			</section>
+			<!--GALLERY SECTION END-->
+
+
+			<!--COUNTER SECTION START-->
+			<section class="edu2_counter_wrap">
+				<div class="container">
+					<!--EDU2 COUNTER DES START-->
+					<div class="edu2_counter_des">
+						<span><i class="icon-group2"></i></span>
+						<h3 class="counter">94,532</h3>
+						<h5>FOREIGN FOLLOWERS</h5>
+					</div>
+					<!--EDU2 COUNTER DES END-->
+					<!--EDU2 COUNTER DES START-->
+					<div class="edu2_counter_des">
+						<span><i class="icon-book236"></i></span>
+						<h3 class="counter">11,223</h3>
+						<h5>CLASSES COMPLETE</h5>
+					</div>
+					<!--EDU2 COUNTER DES END-->
+					<!--EDU2 COUNTER DES START-->
+					<div class="edu2_counter_des">
+						<span><i class="icon-win5"></i></span>
+						<h3 class="counter">282,673</h3>
+						<h5>STUDENTS ENROLLED</h5>
+					</div>
+					<!--EDU2 COUNTER DES END-->
+					<!--EDU2 COUNTER DES START-->
+					<div class="edu2_counter_des">
+						<span><i class=" icon-user255"></i></span>
+						<h3 class="counter">370</h3>
+						<h5>CERTIFIED TEACHERS</h5>
+					</div>
+					<!--EDU2 COUNTER DES END-->
+				</div>
+			</section>
+			<!--COUNTER SECTION END-->
+
+
+
+			<!--OUR TESTEMONIAL WRAP START-->
+			<section>
+				<div class="container">
+					<div class="row">
+						<!-- HEADING 2 START-->
+						<div class="col-md-12">
+							<div class="kf_edu2_heading1">
+								<h3>Our Testimonial</h3>
+							</div>
+						</div>
+						<!-- HEADING 2 END-->
+						<!-- TESTEMONIAL SLIDER WRAP START-->
+						<div class="edu2_testemonial_slider_wrap">
+							<div id="owl-demo-9">
+								<div class="item">
+									<!-- TESTEMONIAL SLIDER WRAP START-->
+									<div class="edu_testemonial_wrap">
+										<figure><img src="extra-images/testemonial.1.jpg" alt=""/></figure>
+										<div class="kode-text">
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.aenean sollicitudin, lorem quis bibendum auctor...</p>
+											<a href="#">John Doe<span>- Happy Student</span></a>
+										</div>
+									</div>
+									<!-- TESTEMONIAL SLIDER WRAP END-->
+								</div>
+
+								<div class="item">
+									<!-- TESTEMONIAL SLIDER WRAP START-->
+									<div class="edu_testemonial_wrap">
+										<figure><img src="extra-images/testemonial.2.jpg" alt=""/></figure>
+										<div class="kode-text">
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.aenean sollicitudin, lorem quis bibendum auctor...</p>
+											<a href="#">John Doe<span>- Happy Student</span></a>
+										</div>
+									</div>
+									<!-- TESTEMONIAL SLIDER WRAP END-->
+								</div>
+
+								<div class="item">
+									<!-- TESTEMONIAL SLIDER WRAP START-->
+									<div class="edu_testemonial_wrap">
+										<figure><img src="extra-images/testemonial.1.jpg" alt=""/></figure>
+										<div class="kode-text">
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.aenean sollicitudin, lorem quis bibendum auctor...</p>
+											<a href="#">John Doe<span>- Happy Student</span></a>
+										</div>
+									</div>
+									<!-- TESTEMONIAL SLIDER WRAP END-->
+								</div>
+								
+								<div class="item">
+									<!-- TESTEMONIAL SLIDER WRAP START-->
+									<div class="edu_testemonial_wrap">
+										<figure><img src="extra-images/testemonial.2.jpg" alt=""/></figure>
+										<div class="kode-text">
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.aenean sollicitudin, lorem quis bibendum auctor...</p>
+											<a href="#">John Doe<span>- Happy Student</span></a>
+										</div>
+									</div>
+									<!-- TESTEMONIAL SLIDER WRAP END-->
+								</div>
+
+								<div class="item">
+									<!-- TESTEMONIAL SLIDER WRAP START-->
+									<div class="edu_testemonial_wrap">
+										<figure><img src="extra-images/testemonial.1.jpg" alt=""/></figure>
+										<div class="kode-text">
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.aenean sollicitudin, lorem quis bibendum auctor...</p>
+											<a href="#">John Doe<span>- Happy Student</span></a>
+										</div>
+									</div>
+									<!-- TESTEMONIAL SLIDER WRAP END-->
+								</div>
+								
+								<div class="item">
+									<!-- TESTEMONIAL SLIDER WRAP START-->
+									<div class="edu_testemonial_wrap">
+										<figure><img src="extra-images/testemonial.2.jpg" alt=""/></figure>
+										<div class="kode-text">
+											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.aenean sollicitudin, lorem quis bibendum auctor...</p>
+											<a href="#">John Doe<span>- Happy Student</span></a>
+										</div>
+									</div>
+									<!-- TESTEMONIAL SLIDER WRAP END-->
+								</div>
+							</div>
+						</div>
+						<!-- TESTEMONIAL SLIDER WRAP END-->
+					</div>
+					<div class="loadmore" style="margin-top:30px;">
+						<a href="/photos" class="btn-3">Find Out More Reviews</a>
+					</div>
+				</div>
+			</section>
+			<!--OUR TESTEMONIAL WRAP END-->
+
+			<section style="background-color:#efefef;">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="kf_edu2_heading1">
+								<h3>Your Valuable Feedbacks</h3>
+							</div>
+							<div class="col-md-12">
+								<p><strong>Like and share our website</strong></p>
+										<div class="fb-like" data-href="https://digitalguru.solutions" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+									</div>
+							<div class="fb-comments" data-href="https://digitalguru.solutions/" data-numposts="3"></div>
+						</div>
+						<!-- HEADING 2 START-->
+
+
+						<div class="col-md-6">
+							<div class="kf_edu2_heading1">
+								<h3>Earlier Posts</h3>
+							</div>
+							 <div class="widget widget-recent-posts">
+                                    <ul class="sidebar_rpost_des">
+                                        <!--LIST ITEM START-->
+                                        {% for obj in blogs %}
+                                        <li>
+                                            <div class="kode-text">
+                                                <h6><a href="/blog/{{obj.id}}/">{{obj.title}}</a></h6>
+                                                <span><i class="fa fa-clock-o"></i>{{obj.timestamp}}</span>
+                                            </div>
+
+                                        </li>
+                                        {% endfor %}
+                                        <!--LIST ITEM START-->
+                                    </ul>
+                                </div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+
+
+
+
+		<!--FOOTER START-->
+		<footer>
+			<!--EDU2 FOOTER CONTANT WRAP START-->
+				<div class="container">
+					<div class="row">
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+							<div class="widget">
+								<h5>Facebook</h5>
+
+								<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fshopcon.in%2F&tabs=timeline&width=300&height=140&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId=1222157967920151" width="300" height="140" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+							</div>
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+
+							<!--KF SIDE BAR TAG CLOUD WRAP START-->
+                            <div class="widget widget-tag-cloud">
+                                <h5>Quick Links</h5>
+                                <ul>
+                                    <li><a href="#">The Person</a></li>
+                                    <li><a href="#">Our E-Solutions</a></li>
+                                    <li><a href="#">Gallery</a></li>
+                                    <li><a href="#">Videos</a></li>
+                                    <li><a href="#">Innovations</a></li>
+                                    <li><a href="#">Media</a></li>
+                                    <li><a href="#">On Demand Training</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                </ul>
+
+                            </div>
+                            <!--KF SIDE BAR TAG CLOUD WRAP END-->
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+							<div class="widget">
+								<h5>Follow Us On</h5>
+
+								<div class="row">
+									<div class="col-md-12">
+										<a href="#"><img src="./images/fb.png" height="50" width="50"/></a>
+										<a href="#"><img src="./images/insta.png" height="50" width="50"/></a>
+										<a href="#"><img src="./images/utube.png" height="50" width="50"/></a>
+									</div>
+								</div>
+								<div class="row">
+
+									<div class="col-md-12">
+										<div class="g-ytsubscribe" data-channelid="UC2rxF1kp2XPxAeMWj3o9d_Q" data-layout="default" data-count="default"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+							<div class="widget widget-contact">
+								<h5>Contact</h5>
+								<ul>
+									<li>PO Box UN152468, 1 Street North, New Towm, California, USA</li>
+									<li>Phone : 92730678</li>
+									<li>Email : poransathikahipan@gmail.com</li>
+								</ul>
+							</div>
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+					</div>
+				</div>
+
+
+		</footer>
+		<!--FOOTER END-->
+
+
+
+		<!--COPYRIGHTS START-->
+		<div class="edu2_copyright_wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="copyright_des">
+							<span>&copy; All Rights reserved. <i>hand made by</i> <a href="#">SHOPCON DEVELOPERS</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--COPYRIGHTS START-->
+    </div>
+
+    <!--KF KODE WRAPPER WRAP END-->
+	<!--Bootstrap core JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery.js" %}'></script>
+<script type="text/javascript" src='{% static "js/bootstrap.min.js" %}'></script>
+
+	<!--Bx-Slider JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery.bxslider.min.js" %}'></script>
+
+	<!--Owl Carousel JavaScript-->
+	<script type="text/javascript" src='{% static "js/owl.carousel.min.js" %}'></script>
+
+	<!--Pretty Photo JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery.prettyPhoto.js" %}'></script>
+
+	<!--Full Calender JavaScript-->
+	<script type="text/javascript" src='{% static "js/moment.min.js" %}'></script>
+<script type="text/javascript" src='{% static "js/fullcalendar.min.js" %}'></script>
+<script type="text/javascript" src='{% static "js/jquery.downCount.js" %}'></script>
+
+	<!--Image Filterable JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery-filterable.js" %}'></script>
+
+	<!--Accordian JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery.accordion.js" %}'></script>
+
+	<!--Number Count (Waypoints) JavaScript-->
+	<script type="text/javascript" src='{% static "js/waypoints-min.js" %}'></script>
+
+	<!--v ticker-->
+	<script type="text/javascript" src='{% static "js/jquery.vticker.min.js" %}'></script>
+
+	<!--select menu-->
+	<script type="text/javascript" src='{% static "js/jquery.selectric.min.js" %}'></script>
+
+	<!--Side Menu-->
+	<script type="text/javascript" src='{% static "js/jquery.sidr.min.js" %}'></script>
+
+	<!--Custom JavaScript-->
+	<script type="text/javascript" src='{% static "js/custom.js" %}'></script>
+
+	<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0&appId=1222157967920151&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<script src="https://apis.google.com/js/platform.js"></script>
+
+</body>
+</html>
+{% endblock content %}

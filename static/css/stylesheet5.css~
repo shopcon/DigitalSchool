@@ -1,0 +1,289 @@
+body
+{
+	background-color:#e5e5e5;
+}
+.navbar {
+    height: 50px;
+    background-color:#ff6600;
+//	border-style: solid;
+	//border:5px;
+//	border-color:yellow;
+	position:fixed;
+	right:0;
+	left:0;
+	top:0;
+    z-index: 100; 
+}
+.navbar img {
+  height: 60px;
+  padding: 15px;
+  width: auto;
+}
+.menubar{
+	height: 25px;
+	background-color: #ffffff;
+	border: 1px solid #eee;
+	position:fixed;
+	right:0;
+	left:0px;
+	top:50px;
+    z-index: 100; 
+}
+.menubar ul li a{
+	color: #000000;
+}
+
+.menu > li {
+    float: none;
+	display:inline-block;
+    display:inline;
+	padding: 10px;
+	color: black;
+//	background-color: #000000;
+	font-size: 16px;
+}
+.menu li :hover {
+ //   background-color: #00ff0f;
+	color: #ff6600;
+}
+.menu {
+    text-align:center;
+}
+
+.container{
+	height:100%;
+    width: 100%;
+}
+
+#clock{
+   background-image:url('');
+   background-size:cover;
+   background-position: center;
+   height: 100px;
+    width: 100px;
+   border: 1px solid #bbb;
+}
+
+
+textarea{
+    font-size: 18px;
+    width: 500px;
+    height: 100px;
+    padding: 10px;
+}
+.statbox{
+        font-size: 55px;
+}
+.row{
+    margin-top: 85px;
+  //  margin-left: auto;
+//    margin-right: auto;
+}
+#dname{
+	padding: 5px;
+	background-color:#ffffff;
+	position: fixed;
+	font-size:16px;
+    left: 0;
+	top: 80px;
+}
+#dname ul :hover{
+	background-color: #aa6600;
+}
+#box1 {
+    padding: 5px;
+    height: 550px;
+//610px;
+	//100%;	
+        //92%;
+    background-color:#ffffff;
+    word-wrap: break-word;
+    font-size:16px;
+    overflow: auto;
+    position: fixed;
+    left: 0;
+    top: 135px;
+}
+#sub_box1 ul :hover{
+	background-color: #aa6600;
+}
+#add_type{
+    display: none;
+    padding: 5px;
+    background-color: #ddd;
+}
+
+.nav{
+	cursor: pointer;
+}
+.nav li{
+	width: 250px;
+}
+.nav li a{
+    color: #000;
+}
+
+#type_box ul {
+	margin-top: -5px;
+}
+#type_box ul li {
+	background-color: #eee;
+    padding: 5px;
+	margin-top: 10px;
+	width: auto;
+	height: auto;
+	cursor: pointer;
+}
+#type_box ul li a{
+    color: #000;
+}
+#type_box ul :hover{
+	background-color: aqua;
+}
+#type_box ul :after{
+	background-color: aqua;
+}
+.box2{
+    padding: 10px;
+    height: 100%;
+  //  margin-left: -20px;
+//    margin-right: -20px;
+    margin-bottom: 10px;
+margin-top:-5px;
+    background-color:#ffffff;
+    word-wrap: break-word;
+    font-size:16px;
+    justify-content: center;
+    clear: right;
+}
+
+#box3{
+    padding: 10px;
+    height: 100%;
+    width: 310px;
+  //  margin-left: 7px;
+    margin-bottom: 10px;
+margin-top:-5px; 
+    background-color:#ffffff;
+    overflow: auto;
+    position: fixed;
+}
+
+hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+::-webkit-textarea-placeholder {
+    font-size: 18px;
+    display: flex;
+    margin-top: 10px;
+  justify-content: center;
+}
+
+/* product.html stylesheet */
+
+#pro_box{
+    padding: 10px;
+    height: 100%;
+ //   margin-left: 5px;
+//    margin-right: -20px;
+    margin-top: -5px;
+ //   margin-bottom: 10px;
+    background-color:#ffffff;
+    word-wrap: break-word;
+    font-size:16px;
+    justify-content: center;
+    border: 2px solid #e5e5e5;
+
+}
+
+::-webkit-textarea-placeholder {
+    font-size: 18px;
+    display: flex;
+    margin-top: 10px;
+  justify-content: center;
+}
+
+input[type="file"] {
+  display: block;
+}
+.imageThumb {
+  max-height: 75px;
+  border: 2px solid;
+  padding: 1px;
+  cursor: pointer;
+}
+.pip {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+}
+.remove {
+  display: block;
+  background: #444;
+  border: 1px solid black;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+.remove:hover {
+  background: white;
+  color: black;
+}
+
+#formdiv {
+  text-align: center;
+}
+#file {
+  color: green;
+  padding: 5px;
+  border: 1px dashed #123456;
+  background-color: #f9ffe5;
+}
+#img {
+  width: 17px;
+  border: none;
+  height: 17px;
+  margin-left: -20px;
+  margin-bottom: 191px;
+}
+.upload {
+  width: 100%;
+  height: 30px;
+}
+.previewBox {
+  text-align: center;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  float: left;
+}
+.previewBox img {
+  height: 150px;
+  width: 150px;
+  padding: 5px;
+  border: 1px solid rgb(232, 222, 189);
+}
+.delete {
+  color: red;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  width: 20px;
+  height:  20px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+#p_img{
+height:250px;
+width:250px;
+margin-left: auto;
+margin-right: auto;
+}
+
+/* store.html stylesheet */
+
+

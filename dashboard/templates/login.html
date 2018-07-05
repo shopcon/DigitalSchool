@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block content %}
+<html lang="en">
+<head>
+  <title>login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <link href='{% static "bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+  <link rel='stylesheet' href='{% static "css/stylesheet1.css" %}'/>
+
+
+</head>
+<body>
+
+<div class="text-center header-bgcolor">
+  <h1>Our Gallery</h1>
+</div>
+
+<div class="container" >
+<form method='POST' action='' enctype='multipart/form-data'>
+{% csrf_token %}
+	<div class="well" id="box">
+	    <h2 style="border-bottom:1px solid black" id="design"><strong>Admin Login</strong></h2>
+		<div class="form-group">
+			<span>
+				Username:
+				{{ form.username }}
+			</span>
+
+			<br> <br>
+
+			<span>
+				Password:
+				{{ form.password }}
+			</span>
+
+		</div>
+	</div>
+<button type='submit' onclick="parent.location=''"> Login </button>
+</form>
+
+
+</div>
+	<h1>{{ title }}</h1>
+
+</body>
+</html>
+
+{% endblock content %}

@@ -1,0 +1,287 @@
+
+<!--<div class="search_bar_outer_wrap">-->
+	    		<!--<div class="container">-->
+	    			<!--<div class="inr_pg_search_wrap">-->
+                         <!--<form method='POST' action='' enctype='multipart/form-data'>-->
+                            <!--{% csrf_token %}-->
+		    				<!--<div class="search_bar_des">-->
+		    					<!--<input type="file" name="file" />-->
+		    					<!--<select name="id">-->
+                                    <!--<option  value="1">Appreciations</option>-->
+                                    <!--<option  value="2">Training for Teachers</option>-->
+                                    <!--<option  value="3">Training for Community</option>-->
+                                    <!--<option  value="4">Training Program given in Other States</option>-->
+                                    <!--<option  value="5">Transformation of School</option>-->
+                                    <!--<option  value="6">Select 6</option>-->
+                                <!--</select>-->
+		    				<!--</div>-->
+		    				<!--<button>Add</button>-->
+		    			<!--</form>-->
+		    		<!--</div>-->
+			    <!--</div>-->
+		    <!--</div>-->
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+{% load static from staticfiles %}
+
+{% block content %}
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Our Gallery</title>
+	<!-- Bootstrap core CSS -->
+  <link rel='stylesheet' href='{% static "css/bootstrap.min.css" %}'/>
+
+
+</head>
+
+<body>
+
+<div class="text-center " style="background-color:#ccc;">
+  <h1>Our Gallery Dashboard</h1>
+</div>
+
+
+	<!--KF KODE WRAPPER WRAP START-->
+    <div class="kode_wrapper" style="margin-top:50px;">
+
+	<div class="container" style="margin-bottom:20px;">
+            <button  class="btn btn-danger" onclick="parent.location='/dashboard'">Home</button>
+        </div>
+
+
+
+			<section>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 well" id="box">
+							<h2 style="border-bottom:1px solid black" id="design"><strong>Add photos</strong></h2>
+
+							<form method='POST' action='' enctype='multipart/form-data'>
+                            {% csrf_token %}
+		    				<div>
+
+								 <div class="input-group image-preview">
+									<input  class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+									<span class="input-group-btn">
+										<!-- image-preview-clear button -->
+										<button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+											<span class="glyphicon glyphicon-remove"></span> Clear
+										</button>
+										<!-- image-preview-input -->
+										<div class="btn btn-default image-preview-input">
+											<span class="glyphicon glyphicon-folder-open"></span>
+											<span class="image-preview-input-title">Browse</span>
+											<input type="file" accept="image/png, image/jpeg, image/gif" name="file1"/> <!-- rename it -->
+										</div>
+									</span>
+								</div>
+								<br>
+
+<div>
+		    					<select class="form-control" name="id">
+                                    <option  value="1">Appreciations</option>
+                                    <option  value="2">Training for Teachers</option>
+                                    <option  value="3">Training for Community</option>
+                                    <option  value="4">Training Program given in Other States</option>
+                                    <option  value="5">Transformation of School</option>
+                                    <option  value="6">Select 6</option>
+                                </select>
+	</div>
+		    				</div>
+							 <br>
+		    				<button class="btn btn-success" >Add</button>
+		    			</form>
+
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+
+
+			<section>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div style="padding:5px;">
+
+								{% for obj in all %}
+
+							<div class="col-md- col-sm-4" >
+								<div>
+									<div class='dropdown'>
+										<button class='btn-menu btn dropdown-toggle pull-right menu' type='button' id='dropdownMenu1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
+											<span class='glyphicon glyphicon-option-vertical' aria-hidden='true' aria-label='Right Align'></span>
+										</button>
+										<ul class='dropdown-menu' aria-labelledby='dropdownMenu1' style="margin-left:150px; margin-top:10px;">
+											<li><a href='/dashboard/ourgallery/delete/{{obj.id}}'>Delete</a></li>
+										</ul>
+									</div>
+
+									<h4>
+									{% if obj.category == 1 %}
+										<div style="background-color:blue; padding:5px;">
+									Appreciations
+											</div>
+									{% endif %}
+
+									{% if obj.category == 2 %}
+										<div style="background-color:red; padding:5px;">
+									Training For Teachers
+											</div>
+									{% endif %}
+
+									{% if obj.category == 3 %}
+										<div style="background-color:green; padding:5px;">
+									Training for Community
+											</div>
+									{% endif %}
+
+									{% if obj.category == 4 %}
+										<div style="background-color:orange; padding:5px;">
+									Traning Program in Other States
+											</div>
+									{% endif %}
+
+									{% if obj.category == 5 %}
+										<div style="background-color:yellow; padding:5px;">
+									Transformation of School
+											</div>
+									{% endif %}
+										</h4>
+
+								</div>
+								<div class="edu_masonery_thumb" style="background-color:#ccc; padding:10px;">
+									<img style="height:150px; width:250px; object-fit:contain;" src='{{ obj.image.url }}'>
+
+								</div>
+								<br><br><br>
+							</div>
+
+							{% endfor %}
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+
+
+
+    </div>
+
+
+<script type="text/javascript" src='{% static "js/jquery.js" %}'></script>
+<script type="text/javascript" src='{% static "js/bootstrap.min.js" %}'></script>
+
+
+
+
+</body>
+
+</html>
+<style>
+	.image-preview-input {
+    position: relative;
+	overflow: hidden;
+	margin: 0px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.image-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.image-preview-input-title {
+    margin-left:2px;
+}
+</style>
+
+<script>
+	$(document).on('click', '#close-preview', function(){
+    $('.image-preview').popover('hide');
+    // Hover befor close the preview
+    $('.image-preview').hover(
+        function () {
+           $('.image-preview').popover('show');
+        },
+         function () {
+           $('.image-preview').popover('hide');
+        }
+    );
+});
+
+$(function() {
+    // Create the close button
+    var closebtn = $('<button/>', {
+        type:"button",
+        text: 'x',
+        id: 'close-preview',
+        style: 'font-size: initial;',
+    });
+    closebtn.attr("class","close pull-right");
+    // Set the popover default content
+    $('.image-preview').popover({
+        trigger:'manual',
+        html:true,
+        title: "<strong>Preview</strong>"+$(closebtn)[0].outerHTML,
+        content: "There's no image",
+        placement:'bottom'
+    });
+    // Clear event
+    $('.image-preview-clear').click(function(){
+        $('.image-preview').attr("data-content","").popover('hide');
+        $('.image-preview-filename').val("");
+        $('.image-preview-clear').hide();
+        $('.image-preview-input input:file').val("");
+        $(".image-preview-input-title").text("Browse");
+    });
+    // Create the preview image
+    $(".image-preview-input input:file").change(function (){
+        var img = $('<img/>', {
+            id: 'dynamic',
+            width:250,
+            height:200
+        });
+        var file = this.files[0];
+        var reader = new FileReader();
+        // Set preview image into the popover data-content
+        reader.onload = function (e) {
+            $(".image-preview-input-title").text("Change");
+            $(".image-preview-clear").show();
+            $(".image-preview-filename").val(file.name);
+            img.attr('src', e.target.result);
+            $(".image-preview").attr("data-content",$(img)[0].outerHTML).popover("show");
+        }
+        reader.readAsDataURL(file);
+    });
+});
+</script>
+{% endblock content %}
+
+

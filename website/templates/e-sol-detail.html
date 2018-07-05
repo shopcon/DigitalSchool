@@ -1,0 +1,900 @@
+
+
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+{% load static from staticfiles %}
+
+{% block content %}
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Education</title>
+	<!-- Bootstrap core CSS -->
+  <link rel='stylesheet' href='{% static "css/bootstrap.min.css" %}'/>
+
+	<!-- Full Calender CSS -->
+		  <link rel='stylesheet' href='{% static "css/fullcalendar.css" %}'/>
+
+	<!-- Owl Carousel CSS -->
+		  <link rel='stylesheet' href='{% static "css/owl.carousel.css" %}'/>
+
+	<!-- Pretty Photo CSS -->
+		  <link rel='stylesheet' href='{% static "css/prettyPhoto.css" %}'/>
+
+	<!-- Bx-Slider StyleSheet CSS -->
+		  <link rel='stylesheet' href='{% static "css/jquery.bxslider.css" %}'/>
+
+	<!-- Font Awesome StyleSheet CSS -->
+		  <link rel='stylesheet' href='{% static "css/font-awesome.min.css" %}'/>
+		  <link rel='stylesheet' href='{% static "svg/style.css" %}'/>
+
+	<!-- Widget CSS -->
+		  <link rel='stylesheet' href='{% static "css/widget.css" %}'/>
+
+	<!-- Typography CSS -->
+		  <link rel='stylesheet' href='{% static "css/typography.css" %}'/>
+
+	<!-- Shortcodes CSS -->
+		  <link rel='stylesheet' href='{% static "css/shortcodes.css" %}'/>
+
+	<!-- Custom Main StyleSheet CSS -->
+		  <link rel='stylesheet' href='{% static "css/style.css" %}'/>
+
+	<!-- Color CSS -->
+		  <link rel='stylesheet' href='{% static "css/color.css" %}'/>
+
+	<!-- Responsive CSS -->
+		  <link rel='stylesheet' href='{% static "css/responsive.css" %}'/>
+
+	<!-- SELECT MENU -->
+		  <link rel='stylesheet' href='{% static "css/selectric.css" %}'/>
+
+	<!-- SIDE MENU -->
+		  <link rel='stylesheet' href='{% static "css/jquery.sidr.dark.css" %}'/>
+</head>
+
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+	<!--KF KODE WRAPPER WRAP START-->
+    <div class="kode_wrapper">
+		<!-- SIGNIN MODEL START -->
+		<div class="modal fade" id="signin-box" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<div class="modal-content">
+					<div class="user-box">
+						<h2>Register for free counseling</h2>
+						<!--FORM FIELD START-->
+						<form method='POST' action='/add-free-counselling/' enctype='multipart/form-data'>
+{% csrf_token %}
+						<div class="form">
+							<div class="input-container">
+								<span>
+									<h6 align="left" >Name:</h6>
+								{{form.name}}
+									</span>
+							</div>
+
+							<div class="input-container">
+								<h6 align="left">E-mail:</h6>
+								{{form.email}}
+							</div>
+							<div class="input-container">
+								<h6 align="left">Mobile No.:</h6>
+								{{form.mobile}}
+							</div>
+
+							<div class="input-container">
+								<button class="btn-style">Register</button>
+							</div>
+						</div>
+						</form>
+						<!--FORM FIELD END-->
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+    <!-- SIGNIN MODEL END -->
+
+
+
+    	<!--HEADER START-->
+    	<header id="header_2">
+    		<!--kode top bar start-->
+    		<div class="top_bar_2">
+	    		<div class="container">
+	    			<div class="row">
+	    				<div class="col-md-4" style="margin-top: 10px; text-color: #ffffff;">
+	    					<h4>Contact us for free counseling</h4>
+	    				</div>
+	    				<div class="col-md-8 hide-email" style="margin-top: -20px; text-color: #ffffff;">
+    						<ul class="login_wrap">
+    							<li class="email"><h6><i class="fa fa-envelope"></i>E-mail: poransathikahipan@gmail.com</h6></li>
+    							<li>  <h2>    </h2> </li>
+    							<li><h6><i class="fa fa-phone"></i> Mb: 92730678</h6></li>
+								<li><a href="#" data-toggle="modal" data-target="#signin-box"><i class="fa fa-sign-in"></i>Sign In</a></li>
+    							<li><a href=""><img src="./images/fb.png" height="35" width="35"></li>
+    							<li><a href=""><img src="./images/insta.png" height="35" width="35"></li>
+    						</ul>
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+    		<!--kode top bar end-->
+
+	    	<!--kode navigation start-->
+    		<div class="kode_navigation">
+    			<div id="mobile-header">
+                	<a id="responsive-menu-button" href="#sidr-main"><i class="fa fa-bars"></i></a>
+                </div>
+    			<div>
+    				<div class="row">
+    					<div class="col-md-2">
+    						<div class="logo_wrap">
+    							<a href="/"><img src='{% static 'img/logo.png' %}' alt=""/></a>
+    						</div>
+    					</div>
+    					<div class="col-md-10">
+    						<!--kode nav_2 start-->
+    						<div class="nav_2" id="navigation">
+    							<ul>
+    								<li><a href="/">home</a></li>
+									<li><a>Success Story <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+		                            	<ul>
+		                                    <li><a href="/sandip-gund">The Person</a></li>
+		                                    <li><a href="/mission-digital-school">Mission Digital School</a></li>
+		                                </ul>
+		                            </li>
+		                            <li><a href="/e-solutions/">E-Solution</a></li>
+		                            <li><a href="#">Innovations</a></li>
+		                            <li><a href="#">Achievements</a></li>
+		                            <li><a>gallery <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+		                            	<ul>
+											<li><a href="/our-gallery">Our gallery</a></li>
+		                                	<li><a href="/photos">Photos</a></li>
+		                                    <li><a target="blank" href="https://www.youtube.com/user/MrVivekBindra">Videos</a></li>
+		                                    <li><a href="/media">Media</a></li>
+		                                </ul>
+		                            </li>
+									<li><a href="#">Training <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+		                            	<ul>
+		                                    <li><a href="contactus.html">On Demand Trianing</a></li>
+		                                    <li><a href="contactus-2.html">Photos</a></li>
+		                                </ul>
+		                            </li>
+		                            <li><a href="/blog">Blog</a></li>
+    							</ul>
+    						</div>
+    						<!--kode nav_2 end-->
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    		<!--kode navigation end-->
+		</header>
+
+        <div class="kf_content_wrap">
+
+
+            <section style="background-color: #ccc">
+                <div class="container">
+                    <div class="row">
+                        <!-- FACULTY SLIDER WRAP START-->
+                        <div class="col-md-12">
+
+                            <div class="col-md-12">
+                            <div class="kf_edu2_heading1">
+                                <h3>E-solutions</h3>
+                            </div>
+                        </div>
+
+
+                            <div class="edu2_faculty_wrap">
+                                <div id="owl-demo-81" class="owl-carousel owl-theme">
+                                    <div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e1.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e1">1</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e2.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e2">2</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e3.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e3">3</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e4.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e4">4</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e5.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e5">5</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e6.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e6">6</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e7.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e7">7</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e8.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e8">8</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e9.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e9">9</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e10.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e10">10</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e11.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e11">11</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e12.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e12">12</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e13.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e13">13</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e14.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e14">14</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e15.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e15">15</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e16.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e16">16</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e17.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e17">17</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e18.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e18">18</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e19.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e19">19</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e20.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e20">20</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+
+									<div class="item">
+                                        <!-- FACULTY DES START-->
+                                        <div class="edu2_faculty_des">
+                                            <figure><img src='{% static 'img/e-sol/e21.jpg' %}' alt=""/>
+												<figcaption>
+												<a href="#e21">21</a>
+											</figcaption>
+                                            </figure>
+                                        </div>
+                                        <!-- FACULTY DES END-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FACULTY SLIDER WRAP END-->
+                    </div>
+                </div>
+            </section>
+
+
+
+    		<section>
+    			<div class="container">
+    				<div class="row">
+
+
+                        <!--KF_EDU_SIDEBAR_WRAP START-->
+                        <div class="col-md-1">
+                        </div>
+                        <!--KF EDU SIDEBAR WRAP END-->
+
+    					<div class="col-md-10">
+    						<!--KF_BLOG DETAIL_WRAP START-->
+    						<div id="e1" class="kf_blog_detail_wrap">
+
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e1.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+    						<!--KF_BLOG DETAIL_WRAP END-->
+
+
+
+                            <div id="e2" class="kf_blog_detail_wrap">
+
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e2.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+                            <div id="e3" class="kf_blog_detail_wrap">
+
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e3.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+                            <div id="e4" class="kf_blog_detail_wrap">
+
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e4.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+                            <div id="e5" class="kf_blog_detail_wrap">
+
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e5.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+                            <div id="e6" class="kf_blog_detail_wrap">
+
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e6.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+                            <div id="e7" class="kf_blog_detail_wrap">
+
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e7.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+                            <div id="e8" class="kf_blog_detail_wrap">
+
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e8.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DEAIL THUMBNAIL END-->
+    						</div>
+
+                            <div id="e9" class="kf_blog_detail_wrap">
+
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e9.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+                            <div id="e10" class="kf_blog_detail_wrap">
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e10.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+							<div id="e11" class="kf_blog_detail_wrap">
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e11.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+							<div id="e12" class="kf_blog_detail_wrap">
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e12.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+							<div id="e13" class="kf_blog_detail_wrap">
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e13.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+							<div id="e14" class="kf_blog_detail_wrap">
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e14.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+							<div id="e15" class="kf_blog_detail_wrap">
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e15.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+							<div id="e16" class="kf_blog_detail_wrap">
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e16.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+							<div id="e17" class="kf_blog_detail_wrap">
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e17.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+							<div id="e18" class="kf_blog_detail_wrap">
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e18.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+							<div id="e19" class="kf_blog_detail_wrap">
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e19.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+							<div id="e20" class="kf_blog_detail_wrap">
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e20.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+							<div id="e21" class="kf_blog_detail_wrap">
+    							<!-- BLOG DETAIL THUMBNAIL START-->
+    							<div class="blog_detail_thumbnail">
+	    							<figure>
+	    								<img src='{% static 'img/e-sol/e21.jpg' %}' alt=""/>
+	    							</figure>
+	    						</div>
+	    						<!-- BLOG DETAIL THUMBNAIL END-->
+    						</div>
+
+
+                        </div>
+    				</div>
+    			</div>
+    		</section>
+    	</div>
+
+		<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+
+
+
+
+
+
+		<!--FOOTER START-->
+		<footer>
+			<!--EDU2 FOOTER CONTANT WRAP START-->
+				<div class="container">
+					<div class="row">
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+							<div class="widget">
+								<h5>Facebook</h5>
+
+								<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fshopcon.in%2F&tabs=timeline&width=300&height=140&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId=1222157967920151" width="300" height="140" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+							</div>
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+
+							<!--KF SIDE BAR TAG CLOUD WRAP START-->
+                            <div class="widget widget-tag-cloud">
+                                <h5>Quick Links</h5>
+                                <ul>
+                                    <li><a href="#">Science</a></li>
+                                    <li><a href="#">Development</a></li>
+                                    <li><a href="#">Fine Arts</a></li>
+                                    <li><a href="#">Research</a></li>
+                                    <li><a href="#">Admissions</a></li>
+                                    <li><a href="#">PHD</a></li>
+                                    <li><a href="#">History &amp; Politics</a></li>
+                                    <li><a href="#">Sports</a></li>
+                                </ul>
+
+                            </div>
+                            <!--KF SIDE BAR TAG CLOUD WRAP END-->
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+							<div class="widget">
+								<h5>Follow Us On</h5>
+
+								<div class="row">
+									<div class="col-md-12">
+										<a href="#"><img src="./images/fb.png" height="50" width="50"/></a>
+										<a href="#"><img src="./images/insta.png" height="50" width="50"/></a>
+										<a href="#"><img src="./images/utube.png" height="50" width="50"/></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+							<div class="widget widget-contact">
+								<h5>Contact</h5>
+								<ul>
+									<li>PO Box UN152468, 1 Street North, New Towm, California, USA</li>
+									<li>Phone : 92730678</li>
+									<li>Email : poransathikahipan@gmail.com</li>
+								</ul>
+							</div>
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+					</div>
+				</div>
+
+
+		</footer>
+		<!--FOOTER END-->
+
+
+		<!--COPYRIGHTS START-->
+		<div class="edu2_copyright_wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="edu2_ft_logo_wrap">
+							<a href="#"><img src="extra-images/ft_logo.png" alt=""/></a>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="copyright_des">
+							<span>&copy; All Rights reserved. Hand Made By <a href="#">SHOPCON</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!--COPYRIGHTS START-->
+    </div>
+
+    <!--KF KODE WRAPPER WRAP END-->
+	<!--Bootstrap core JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery.js" %}'></script>
+<script type="text/javascript" src='{% static "js/bootstrap.min.js" %}'></script>
+
+	<!--Bx-Slider JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery.bxslider.min.js" %}'></script>
+
+	<!--Owl Carousel JavaScript-->
+	<script type="text/javascript" src='{% static "js/owl.carousel.min.js" %}'></script>
+
+	<!--Pretty Photo JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery.prettyPhoto.js" %}'></script>
+
+	<!--Full Calender JavaScript-->
+	<script type="text/javascript" src='{% static "js/moment.min.js" %}'></script>
+<script type="text/javascript" src='{% static "js/fullcalendar.min.js" %}'></script>
+<script type="text/javascript" src='{% static "js/jquery.downCount.js" %}'></script>
+
+	<!--Image Filterable JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery-filterable.js" %}'></script>
+
+	<!--Accordian JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery.accordion.js" %}'></script>
+
+	<!--Number Count (Waypoints) JavaScript-->
+	<script type="text/javascript" src='{% static "js/waypoints-min.js" %}'></script>
+
+	<!--v ticker-->
+	<script type="text/javascript" src='{% static "js/jquery.vticker.min.js" %}'></script>
+
+	<!--select menu-->
+	<script type="text/javascript" src='{% static "js/jquery.selectric.min.js" %}'></script>
+
+	<!--Side Menu-->
+	<script type="text/javascript" src='{% static "js/jquery.sidr.min.js" %}'></script>
+
+	<!--Custom JavaScript-->
+	<script type="text/javascript" src='{% static "js/custom.js" %}'></script>
+
+	<script>
+	(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0&appId=1222157967920151&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+$(document).ready(function(){
+     $(window).scroll(function () {
+            if ($(this).scrollTop() > 400) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        $('#back-to-top').click(function () {
+            $('#back-to-top').tooltip('hide');
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+
+        $('#back-to-top').tooltip('show');
+
+});
+
+</script>
+
+
+
+</body>
+<style>
+	.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+}
+
+</style>
+</html>
+{% endblock content %}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+{% load static from staticfiles %}
+
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<!-- Bootstrap core CSS -->
+  <link rel='stylesheet' href='{% static "css/bootstrap.min.css" %}'/>
+
+	<!-- Full Calender CSS -->
+		  <link rel='stylesheet' href='{% static "css/fullcalendar.css" %}'/>
+
+	<!-- Owl Carousel CSS -->
+		  <link rel='stylesheet' href='{% static "css/owl.carousel.css" %}'/>
+
+	<!-- Pretty Photo CSS -->
+		  <link rel='stylesheet' href='{% static "css/prettyPhoto.css" %}'/>
+
+	<!-- Bx-Slider StyleSheet CSS -->
+		  <link rel='stylesheet' href='{% static "css/jquery.bxslider.css" %}'/>
+
+	<!-- Font Awesome StyleSheet CSS -->
+		  <link rel='stylesheet' href='{% static "css/font-awesome.min.css" %}'/>
+		  <link rel='stylesheet' href='{% static "svg/style.css" %}'/>
+
+	<!-- Widget CSS -->
+		  <link rel='stylesheet' href='{% static "css/widget.css" %}'/>
+
+	<!-- Typography CSS -->
+		  <link rel='stylesheet' href='{% static "css/typography.css" %}'/>
+
+	<!-- Shortcodes CSS -->
+		  <link rel='stylesheet' href='{% static "css/shortcodes.css" %}'/>
+
+	<!-- Custom Main StyleSheet CSS -->
+		  <link rel='stylesheet' href='{% static "css/style.css" %}'/>
+
+	<!-- Color CSS -->
+		  <link rel='stylesheet' href='{% static "css/color.css" %}'/>
+
+	<!-- Responsive CSS -->
+		  <link rel='stylesheet' href='{% static "css/responsive.css" %}'/>
+
+	<!-- SELECT MENU -->
+		  <link rel='stylesheet' href='{% static "css/selectric.css" %}'/>
+
+	<!-- SIDE MENU -->
+		  <link rel='stylesheet' href='{% static "css/jquery.sidr.dark.css" %}'/>
+</head>
+
+<body>
+	<!--KF KODE WRAPPER WRAP START-->
+    <div class="kode_wrapper">
+    <!-- register Modal -->
+
+
+    	<!--HEADER START-->
+    	<header id="header_2">
+    		<!--kode top bar start-->
+    		<div class="top_bar_2">
+	    		<div class="container">
+	    			<div class="row">
+	    				<div class="col-md-4" style="margin-top: 10px; text-color: #ffffff;">
+	    					<h4>Contact us for free counseling</h4>
+	    				</div>
+	    				<div class="col-md-8 hide-email" style="margin-top: -20px; text-color: #ffffff;">
+    						<ul class="login_wrap">
+    							<li class="email"><h6><i class="fa fa-envelope"></i>E-mail: poransathikahipan@gmail.com</h6></li>
+    							<li>  <h2>    </h2> </li>
+    							<li><h6><i class="fa fa-phone"></i> Mb: 92730678</h6></li>
+    							<li><a href=""><img src="./images/fb.png" height="35" width="35"></li>
+    							<li><a href=""><img src="./images/insta.png" height="35" width="35"></li>
+    						</ul>
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+    		<!--kode top bar end-->
+
+	    	<!--kode navigation start-->
+    		<div class="kode_navigation">
+    			<div id="mobile-header">
+                	<a id="responsive-menu-button" href="#sidr-main"><i class="fa fa-bars"></i></a>
+                </div>
+    			<div>
+    				<div class="row">
+    					<div class="col-md-2">
+    						<div class="logo_wrap">
+    							<a href="/"><img src='{% static 'img/logo.png' %}' alt=""/></a>
+    						</div>
+    					</div>
+    					<div class="col-md-10">
+    						<!--kode nav_2 start-->
+    						<div class="nav_2" id="navigation">
+    							<ul>
+    								<li><a href="/">home</a></li>
+									<li><a>Success Story <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+		                            	<ul>
+		                                    <li><a href="/sandip-gund">The Person</a></li>
+		                                    <li><a href="/mission-digital-school">Mission Digital School</a></li>
+		                                </ul>
+		                            </li>
+		                            <li><a href="/e-solutions">E-Solution</a></li>
+		                            <li><a href="#">Innovations</a></li>
+		                            <li><a href="#">Achievements</a></li>
+		                            <li><a>gallery <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+		                            	<ul>
+                                            <li><a href="/our-gallery">Our gallery</a></li>
+		                                	<li><a href="/photos">Photos</a></li>
+		                                    <li><a target="blank" href="https://www.youtube.com/user/MrVivekBindra">Videos</a></li>
+		                                    <li><a href="/media">Media</a></li>
+		                                </ul>
+		                            </li>
+									<li><a href="#">Training <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+		                            	<ul>
+		                                    <li><a href="contactus.html">On Demand Trianing</a></li>
+		                                    <li><a href="contactus-2.html">Photos</a></li>
+		                                </ul>
+		                            </li>
+		                            <li><a href="/blog">Blog</a></li>
+    							</ul>
+    						</div>
+    						<!--kode nav_2 end-->
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    		<!--kode navigation end-->
+		</header>
+		<!--HEADER END-->
+
+
+
+
+
+
+         {% block content %}
+        {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--FOOTER START-->
+		<footer>
+			<!--EDU2 FOOTER CONTANT WRAP START-->
+				<div class="container">
+					<div class="row">
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+							<div class="widget">
+								<h5>Facebook</h5>
+
+								<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fshopcon.in%2F&tabs=timeline&width=300&height=140&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId=1222157967920151" width="300" height="140" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+							</div>
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+
+							<!--KF SIDE BAR TAG CLOUD WRAP START-->
+                            <div class="widget widget-tag-cloud">
+                                <h5>Quick Links</h5>
+                                <ul>
+                                   <ul>
+                                    <li><a href="#">The Person</a></li>
+                                    <li><a href="#">Our E-Solutions</a></li>
+                                    <li><a href="#">Gallery</a></li>
+                                    <li><a href="#">Videos</a></li>
+                                    <li><a href="#">Innovations</a></li>
+                                    <li><a href="#">Media</a></li>
+                                    <li><a href="#">On Demand Training</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                </ul>
+                                </ul>
+
+                            </div>
+                            <!--KF SIDE BAR TAG CLOUD WRAP END-->
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+							<div class="widget">
+								<h5>Follow Us On</h5>
+
+								<div class="row">
+									<div class="col-md-12">
+										<a href="#"><img src="./images/fb.png" height="50" width="50"/></a>
+										<a href="#"><img src="./images/insta.png" height="50" width="50"/></a>
+										<a href="#"><img src="./images/utube.png" height="50" width="50"/></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+							<div class="widget widget-contact">
+								<h5>Contact</h5>
+								<ul>
+									<li>PO Box UN152468, 1 Street North, New Towm, California, USA</li>
+									<li>Phone : 92730678</li>
+									<li>Email : poransathikahipan@gmail.com</li>
+								</ul>
+							</div>
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+					</div>
+				</div>
+		</footer>
+		<!--FOOTER END-->
+
+		<!--COPYRIGHTS START-->
+		<div class="edu2_copyright_wrap">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-12">
+						<div class="copyright_des">
+							<span>&copy; All Rights reserved. <i>Hand Made By</i> <a href="#">SHOPCON DEVELOPERS</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--COPYRIGHTS START-->
+    </div>
+
+
+  <!--KF KODE WRAPPER WRAP END-->
+	<!--Bootstrap core JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery.js" %}'></script>
+<script type="text/javascript" src='{% static "js/bootstrap.min.js" %}'></script>
+
+	<!--Bx-Slider JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery.bxslider.min.js" %}'></script>
+
+	<!--Owl Carousel JavaScript-->
+	<script type="text/javascript" src='{% static "js/owl.carousel.min.js" %}'></script>
+
+	<!--Pretty Photo JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery.prettyPhoto.js" %}'></script>
+
+	<!--Full Calender JavaScript-->
+	<script type="text/javascript" src='{% static "js/moment.min.js" %}'></script>
+<script type="text/javascript" src='{% static "js/fullcalendar.min.js" %}'></script>
+<script type="text/javascript" src='{% static "js/jquery.downCount.js" %}'></script>
+
+	<!--Image Filterable JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery-filterable.js" %}'></script>
+
+	<!--Accordian JavaScript-->
+	<script type="text/javascript" src='{% static "js/jquery.accordion.js" %}'></script>
+
+	<!--Number Count (Waypoints) JavaScript-->
+	<script type="text/javascript" src='{% static "js/waypoints-min.js" %}'></script>
+
+	<!--v ticker-->
+	<script type="text/javascript" src='{% static "js/jquery.vticker.min.js" %}'></script>
+
+	<!--select menu-->
+	<script type="text/javascript" src='{% static "js/jquery.selectric.min.js" %}'></script>
+
+	<!--Side Menu-->
+	<script type="text/javascript" src='{% static "js/jquery.sidr.min.js" %}'></script>
+
+	<!--Custom JavaScript-->
+	<script type="text/javascript" src='{% static "js/custom.js" %}'></script>
+
+	<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0&appId=1222157967920151&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+</body>
+</html>
