@@ -11,9 +11,9 @@ body
 	border-color:yellow;
 }
 
-.container{
+.outline{
 	margin-top:8em;
-	width:35%;
+	//width:35%;
 	padding:10px;
 	height:100%;
 	border-style: solid;

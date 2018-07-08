@@ -4,7 +4,7 @@
 	top: 0;
 	height: 100%;
 	z-index: 999999;
-	width: 350px;
+	width: 300px;
 	overflow-x: none;
 	overflow-y: auto;
 	font-size: 15px;
@@ -72,6 +72,7 @@
 	font-weight:normal;
 	text-transform:capitalize;
 	line-height: normal;
+	font-size: 18px;
 }
 .sidr ul li ul {
 	border-bottom: none;

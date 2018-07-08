@@ -51,6 +51,14 @@
 
 	<!-- SIDE MENU -->
 		  <link rel='stylesheet' href='{% static "css/jquery.sidr.dark.css" %}'/>
+
+
+		<!--website loading animation from https://michalsnik.github.io/aos/ -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+
+
 </head>
 
 <body>
@@ -68,46 +76,6 @@
 
 	<!--KF KODE WRAPPER WRAP START-->
     <div class="kode_wrapper">
-		<!-- SIGNIN MODEL START -->
-		<div class="modal fade" id="signin-box" tabindex="-1" role="dialog">
-			<div class="modal-dialog">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<div class="modal-content">
-					<div class="user-box">
-						<h2>Register for free counseling</h2>
-						<!--FORM FIELD START-->
-						<form method='POST' action='/add-free-counselling/' enctype='multipart/form-data'>
-{% csrf_token %}
-						<div class="form">
-							<div class="input-container">
-								<span>
-									<h6 align="left" >Name:</h6>
-								{{form.name}}
-									</span>
-							</div>
-
-							<div class="input-container">
-								<h6 align="left">E-mail:</h6>
-								{{form.email}}
-							</div>
-							<div class="input-container">
-								<h6 align="left">Mobile No.:</h6>
-								{{form.mobile}}
-							</div>
-
-							<div class="input-container">
-								<button class="btn-style">Register</button>
-							</div>
-						</div>
-						</form>
-						<!--FORM FIELD END-->
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-    <!-- SIGNIN MODEL END -->
 
 
     	<!--HEADER START-->
@@ -117,16 +85,15 @@
 	    		<div class="container">
 	    			<div class="row">
 	    				<div class="col-md-4" style="margin-top: 10px; text-color: #ffffff;">
-	    					<h4>Contact us for free counseling</h4>
+	    					<h4><button class="btn btn-info" onclick="parent.location='/#form'" >Register</button> for free counseling</h4>
 	    				</div>
-	    				<div class="col-md-8 hide-email" style="margin-top: -20px; text-color: #ffffff;">
+	    				<div class="col-md-8 hide-email social" style="margin-top: -20px; text-color: #ffffff;">
     						<ul class="login_wrap">
     							<li class="email"><h6><i class="fa fa-envelope"></i>E-mail: poransathikahipan@gmail.com</h6></li>
     							<li>  <h2>    </h2> </li>
-    							<li><h6><i class="fa fa-phone"></i> Mb: 92730678</h6></li>
-								<li><a href="#" data-toggle="modal" data-target="#signin-box"><i class="fa fa-sign-in"></i>Sign In</a></li>
-    							<li><a href=""><img src="./images/fb.png" height="35" width="35"></li>
-    							<li><a href=""><img src="./images/insta.png" height="35" width="35"></li>
+    							<li><h6><i class="fa fa-phone"></i> Mb: 9273480678</h6></li>
+    							<li><a href=""><img src='{% static 'img/insta.png' %}' width="35"></li>
+    							<li><a href=""><img src='{% static 'img/fb.png' %}' width="35"></li>
     						</ul>
 	    				</div>
 	    			</div>
@@ -155,14 +122,14 @@
 		                                    <li><a href="/mission-digital-school">Mission Digital School</a></li>
 		                                </ul>
 		                            </li>
-		                            <li><a href="/e-solutions/">E-Solution</a></li>
+		                            <li><a href="/e-solutions/">E-Solutions</a></li>
 		                            <li><a href="#">Innovations</a></li>
 		                            <li><a href="#">Achievements</a></li>
 		                            <li><a>gallery <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 		                            	<ul>
 											<li><a href="/our-gallery">Our gallery</a></li>
 		                                	<li><a href="/photos">Photos</a></li>
-		                                    <li><a target="blank" href="https://www.youtube.com/user/MrVivekBindra">Videos</a></li>
+		                                    <li><a target="blank" href="https://www.youtube.com/channel/UCDpMWhcmmWQzQYJHHcxl41A">Videos</a></li>
 		                                    <li><a href="/media">Media</a></li>
 		                                </ul>
 		                            </li>
@@ -178,9 +145,10 @@
     						<!--kode nav_2 end-->
     					</div>
     				</div>
+
 					<div id="mobile-header">
-                	<a id="responsive-menu-button" href="#sidr-main"><i class="fa fa-bars"></i></a>
-                </div>
+                		<a id="responsive-menu-button" href="#sidr-main"><i class="fa fa-bars"></i></a>
+                	</div>
     			</div>
     		</div>
     		<!--kode navigation end-->
@@ -212,7 +180,7 @@
 
 
 
-		<section>
+		<section data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
 				<div class="container">
 					<div class="row">
 						<!-- HEADING 2 START-->
@@ -277,7 +245,7 @@
 								<div class="item">
 									<!-- TESTEMONIAL SLIDER WRAP START-->
 									<div class="edu_testemonial_wrap">
-										<figure><img src="extra-images/testemonial.1.jpg" alt=""/></figure>
+										<figure><img src='{% static 'img/pp.jpg' %}' alt=""/></figure>
 										<div class="kode-text">
 											<p>During the early years of my life, I have had numerous opportunities to choose different
 professions, however I chose the teaching profession. The quest for knowledge and a desire to
@@ -307,10 +275,10 @@ workshops and orientation programms focusing on social awareness.</p>
 
 		<div class="kf_content_wrap">
 
-			<section class="edu_student_wrap_bg">
+			<section class="edu_student_wrap_bg" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
 				<div class="container">
 					<div class="kf_edu2_heading1">
-						<h3 style="color:#000;">E-Solutions</h3>
+						<h3 style="color:#000;">E-Solutions & Services</h3>
 					</div>
 					<div class="student_slider_wrap">
 						<div class="row">
@@ -464,10 +432,26 @@ workshops and orientation programms focusing on social awareness.</p>
 				</div>
 			</section>
 			<div class="loadmore" style="margin-top:10px;">
-						<a href="/photos" class="btn-3">Find Out More E-solutions</a>
-					</div>
+				<a href="/e-solutions" class="btn-3">Find Out more E-solutions & Services</a>
+			</div>
 
 			<!--COURSE OUTER WRAP END-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -475,8 +459,28 @@ workshops and orientation programms focusing on social awareness.</p>
 			<section>
 				<div class="container">
 					<div class="row">
+
+						{% for obj1 in all %}
+
+						<div class="modal fade" id="{{ obj1.id }}" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <!-- Modal content-->
+						        <div class="modal-content">
+						        	<div class="modal-header">
+						          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						          		<strong>photo</strong>
+						        	</div>
+						        	<div class="modal-body">
+						        		<img class="img-responsive" src='{{ obj1.image.url}}' style=" margin:auto;" alt=""/>
+										<p>{{ obj1.desc }}</p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+
+						{% endfor %}
 						<!-- HEADING 1 START-->
-						<div class="col-md-12">
+						<div class="col-md-12" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
 							<div class="kf_edu2_heading1">
 								<h3>Photo gallery</h3>
 							</div>
@@ -484,22 +488,20 @@ workshops and orientation programms focusing on social awareness.</p>
 						<!-- HEADING 1 END-->
 
 						<!-- FACULTY SLIDER WRAP START-->
-						<div class="edu2_faculty_wrap">
+						<div class="edu2_faculty_wrap" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
 							<div id="owl-demo-81" class="owl-carousel owl-theme">
 
-								{% for obj in all %}
+								{% for obj1 in all %}
 								<div class="item">
 									<!-- FACULTY DES START-->
 									<div class="edu2_faculty_des">
-										<figure><img src='{{obj.image.url}}' %}' alt=""/>
+										<figure><img src='{{obj1.image.url}}' %}' alt=""/>
 											<figcaption>
-												<a href="#"><i class="fa fa-search"></i></a>
+												<a href="" data-toggle="modal" data-target="#{{ obj1.id }}"><i class="fa fa-search-plus"></i></a>
 											</figcaption>
 										</figure>
 										<div class="edu2_faculty_des2">
-											<h6><a href="#">Danny Awesome</a></h6>
-											<strong>Manager</strong>
-											<p>{{ obj.desc }}</p>
+											<p>{{ obj1.desc | truncatechars:25 }}</p>
 										</div>
 									</div>
 									<!-- FACULTY DES END-->
@@ -510,7 +512,7 @@ workshops and orientation programms focusing on social awareness.</p>
 						</div>
 						<!-- FACULTY SLIDER WRAP END-->
 					<div class="loadmore" style="margin-top:30px;">
-						<a href="/photos" class="btn-3">Find Out More Photos</a>
+						<a href="/photos" class="btn-3">See More Photos</a>
 					</div>
 
 					</div>
@@ -519,7 +521,64 @@ workshops and orientation programms focusing on social awareness.</p>
 
 
 
-			<section style="background-color:#efefef;">
+
+			<section class="kode-gallery-section" style="margin-bottom:-40px;" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
+				<!-- HEADING 2 START-->
+                <!--<div class="col-md-12">-->
+                <!--</div>-->
+                <!-- HEADING 2 END-->
+                <!-- EDU2 GALLERY WRAP START-->
+                <div class="edu2_gallery_wrap reg_photo" id="form">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-7">
+
+							</div>
+							<div class="col-md-5  col-sm-12">
+								<div class="user-box">
+									<h2>Register for free counseling</h2>
+									<!--FORM FIELD START-->
+									<form method='POST' action='/add-free-counselling/' enctype='multipart/form-data'>
+										{% csrf_token %}
+									<div class="form">
+										<div class="input-container">
+											<span>
+												<h6 align="left" >Name:</h6>
+											{{form.name}}
+												</span>
+										</div>
+
+										<div class="input-container">
+											<h6 align="left">E-mail:</h6>
+											{{form.email}}
+										</div>
+										<div class="input-container">
+											<h6 align="left">Mobile No.:</h6>
+											{{form.mobile}}
+										</div>
+
+										<div class="input-container">
+											<button class="btn-style">Register</button>
+										</div>
+									</div>
+									</form>
+									<!--FORM FIELD END-->
+								</div>
+							</div>
+						</div>
+					</div>
+                    <!-- EDU2 GALLERY DES START-->
+                    <div class="gallery3">
+
+                    </div>
+
+                <!-- EDU2 GALLERY WRAP END-->
+                </div>
+			</section>
+
+
+
+			<section style="background-color:#efefef;" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
 				<div class="container">
 					<div class="row">
 						<!-- HEADING 1 START-->
@@ -535,8 +594,8 @@ workshops and orientation programms focusing on social awareness.</p>
 								<div class="item col-md-6">
 									<!-- FACULTY DES START-->
 									<!--<div class="edu2_faculty_des">-->
-									<iframe width="560" height="315" src="https://www.youtube.com/embed/W1hoGEBccOA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-										<div class="edu2_faculty_des2">
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/F7yZJI5YZGg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+									<div class="edu2_faculty_des2">
 											<h6><a href="#">Simon Grishaber</a></h6>
 											<strong>Health Teacher</strong>
 											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh...</p>
@@ -548,7 +607,7 @@ workshops and orientation programms focusing on social awareness.</p>
 								<div class="item col-md-6">
 									<!-- FACULTY DES START-->
 									<div class="edu2_faculty_des">
-										<iframe width="560" height="315" src="https://www.youtube.com/embed/W1hoGEBccOA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/EjSDBZBNt98" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 										<div class="edu2_faculty_des2">
 											<h6><a href="#">Simon Grishaber</a></h6>
 											<strong>Health Teacher</strong>
@@ -561,10 +620,34 @@ workshops and orientation programms focusing on social awareness.</p>
 						</div>
 						<!-- FACULTY SLIDER WRAP END-->
 						<div class="loadmore">
-						<a href="https://www.youtube.com/user/MrVivekBindra" target="blank" class="btn-3">Find Out More Videos</a>
+						<a href="https://www.youtube.com/channel/UCDpMWhcmmWQzQYJHHcxl41A" target="blank" class="btn-3">Watch More Videos</a>
 					</div>
 					</div>
 				</div>
+			</section>
+
+
+
+
+			<section class="kode-gallery-section" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
+				<!-- HEADING 2 START-->
+                <div class="col-md-12">
+                    <div class="kf_edu2_heading2">
+                        <h3>Our Gallery</h3>
+						<!--<p>Student gallery of the year past graduated passouts</p>-->
+                    </div>
+                </div>
+                <!-- HEADING 2 END-->
+                <!-- EDU2 GALLERY WRAP START-->
+                <div class="edu2_gallery_wrap gallery">
+
+                    <!-- EDU2 GALLERY DES START-->
+                    <div class="gallery3">
+						<a href="/our-gallery"><img src='{% static 'img/our-gallery.jpg' %}' alt=""/></a>
+                    </div>
+
+                <!-- EDU2 GALLERY WRAP END-->
+                </div>
 			</section>
 
 
@@ -572,22 +655,154 @@ workshops and orientation programms focusing on social awareness.</p>
 				<div class="container">
 					<div class="row">
 						<!-- HEADING 1 START-->
-						<div class="col-md-12">
+						<div class="col-md-12" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
 							<div class="kf_edu2_heading1">
 								<h3>Awards & Achievement</h3>
 							</div>
 						</div>
 						<!-- HEADING 1 END-->
 
+
+						<div class="modal fade" id="modal_a1" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <!-- Modal content-->
+						        <div class="modal-content">
+						        	<div class="modal-header">
+						          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						          		<strong>photo</strong>
+						        	</div>
+						        	<div class="modal-body">
+						        		<img class="img-responsive" src='{% static 'img/award/a1.jpg' %}' style=" margin:auto;" alt=""/>
+										<p>{{ obj1.desc }}</p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+
+						<div class="modal fade" id="modal_a2" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <!-- Modal content-->
+						        <div class="modal-content">
+						        	<div class="modal-header">
+						          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						          		<strong>photo</strong>
+						        	</div>
+						        	<div class="modal-body">
+						        		<img class="img-responsive" src='{% static 'img/award/a5.jpg' %}' style=" margin:auto;" alt=""/>
+										<p>{{ obj1.desc }}</p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+
+						<div class="modal fade" id="modal_a3" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <!-- Modal content-->
+						        <div class="modal-content">
+						        	<div class="modal-header">
+						          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						          		<strong>photo</strong>
+						        	</div>
+						        	<div class="modal-body">
+						        		<img class="img-responsive" src='{% static 'img/award/a11.jpg' %}' style=" margin:auto;" alt=""/>
+										<p>{{ obj1.desc }}</p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+
+						<div class="modal fade" id="modal_a4" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <!-- Modal content-->
+						        <div class="modal-content">
+						        	<div class="modal-header">
+						          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						          		<strong>photo</strong>
+						        	</div>
+						        	<div class="modal-body">
+						        		<img class="img-responsive" src='{% static 'img/award/a17.jpg' %}' style=" margin:auto;" alt=""/>
+										<p>{{ obj1.desc }}</p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+
+						<div class="modal fade" id="modal_a5" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <!-- Modal content-->
+						        <div class="modal-content">
+						        	<div class="modal-header">
+						          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						          		<strong>photo</strong>
+						        	</div>
+						        	<div class="modal-body">
+						        		<img class="img-responsive" src='{% static 'img/award/a3.jpg' %}' style=" margin:auto;" alt=""/>
+										<p>{{ obj1.desc }}</p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+
+						<div class="modal fade" id="modal_a6" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <!-- Modal content-->
+						        <div class="modal-content">
+						        	<div class="modal-header">
+						          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						          		<strong>photo</strong>
+						        	</div>
+						        	<div class="modal-body">
+						        		<img class="img-responsive" src='{% static 'img/award/a2.jpg' %}' style=" margin:auto;" alt=""/>
+										<p>{{ obj1.desc }}</p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+
+						<div class="modal fade" id="modal_a7" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <!-- Modal content-->
+						        <div class="modal-content">
+						        	<div class="modal-header">
+						          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						          		<strong>photo</strong>
+						        	</div>
+						        	<div class="modal-body">
+						        		<img class="img-responsive" src='{% static 'img/award/a6.jpg' %}' style=" margin:auto;" alt=""/>
+										<p>{{ obj1.desc }}</p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+
+						<div class="modal fade" id="modal_a8" role="dialog">
+						    <div class="modal-dialog modal-lg">
+						      <!-- Modal content-->
+						        <div class="modal-content">
+						        	<div class="modal-header">
+						          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						          		<strong>photo</strong>
+						        	</div>
+						        	<div class="modal-body">
+						        		<img class="img-responsive" src='{% static 'img/award/a16.jpg' %}' style=" margin:auto;" alt=""/>
+										<p>{{ obj1.desc }}</p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+
+						
+						
+
 						<!-- FACULTY SLIDER WRAP START-->
-						<div class="edu2_faculty_wrap">
+						<div class="edu2_faculty_wrap" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
 							<div id="owl-demo-83" class="owl-carousel owl-theme">
 								<div class="item">
 									<!-- FACULTY DES START-->
 									<div class="edu2_faculty_des">
 										<figure><img src='{% static 'img/award/a1.jpg' %}' alt=""/>
 											<figcaption>
-												<a href="#"><i class="fa fa-search"></i></a>
+												<a href="#" data-toggle="modal" data-target="#modal_a1"><i class="fa fa-search-plus"></i></a>
 											</figcaption>
 										</figure>
 										<div class="edu2_faculty_des2">
@@ -604,7 +819,7 @@ workshops and orientation programms focusing on social awareness.</p>
 									<div class="edu2_faculty_des">
 										<figure><img src='{% static 'img/award/a5.jpg' %}' alt=""/>
 											<figcaption>
-												<a href="#"><i class="fa fa-search"></i></a>
+												<a href="#" data-toggle="modal" data-target="#modal_a2"><i class="fa fa-search-plus"></i></a>
 											</figcaption>
 										</figure>
 										<div class="edu2_faculty_des2">
@@ -621,7 +836,7 @@ workshops and orientation programms focusing on social awareness.</p>
 									<div class="edu2_faculty_des">
 										<figure><img src='{% static 'img/award/a11.jpg' %}' alt=""/>
 											<figcaption>
-												<a href="#"><i class="fa fa-search"></i></a>
+												<a href="#" data-toggle="modal" data-target="#modal_a3"><i class="fa fa-search-plus"></i></a>
 											</figcaption>
 										</figure>
 										<div class="edu2_faculty_des2">
@@ -638,7 +853,7 @@ workshops and orientation programms focusing on social awareness.</p>
 									<div class="edu2_faculty_des">
 										<figure><img src='{% static 'img/award/a17.jpg' %}' alt=""/>
 											<figcaption>
-												<a href="#"><i class="fa fa-search"></i></a>
+												<a href="#" data-toggle="modal" data-target="#modal_a4"><i class="fa fa-search-plus"></i></a>
 											</figcaption>
 										</figure>
 										<div class="edu2_faculty_des2">
@@ -655,7 +870,7 @@ workshops and orientation programms focusing on social awareness.</p>
 									<div class="edu2_faculty_des">
 										<figure><img src='{% static 'img/award/a3.jpg' %}' alt=""/>
 											<figcaption>
-												<a href="#"><i class="fa fa-search"></i></a>
+												<a href="#" data-toggle="modal" data-target="#modal_a5"><i class="fa fa-search-plus"></i></a>
 											</figcaption>
 										</figure>
 										<div class="edu2_faculty_des2">
@@ -672,7 +887,7 @@ workshops and orientation programms focusing on social awareness.</p>
 									<div class="edu2_faculty_des">
 										<figure><img src='{% static 'img/award/a2.jpg' %}' alt=""/>
 											<figcaption>
-												<a href="#"><i class="fa fa-search"></i></a>
+												<a href="#" data-toggle="modal" data-target="#modal_a6"><i class="fa fa-search-plus"></i></a>
 											</figcaption>
 										</figure>
 										<div class="edu2_faculty_des2">
@@ -689,7 +904,7 @@ workshops and orientation programms focusing on social awareness.</p>
 									<div class="edu2_faculty_des">
 										<figure><img src='{% static 'img/award/a6.jpg' %}' alt=""/>
 											<figcaption>
-												<a href="#"><i class="fa fa-search"></i></a>
+												<a href="#" data-toggle="modal" data-target="#modal_a7"><i class="fa fa-search-plus"></i></a>
 											</figcaption>
 										</figure>
 										<div class="edu2_faculty_des2">
@@ -706,7 +921,7 @@ workshops and orientation programms focusing on social awareness.</p>
 									<div class="edu2_faculty_des">
 										<figure><img src='{% static 'img/award/a16.jpg' %}' alt=""/>
 											<figcaption>
-												<a href="#"><i class="fa fa-search"></i></a>
+												<a href="#" data-toggle="modal" data-target="#modal_a8"><i class="fa fa-search-plus"></i></a>
 											</figcaption>
 										</figure>
 										<div class="edu2_faculty_des2">
@@ -723,14 +938,15 @@ workshops and orientation programms focusing on social awareness.</p>
 					</div>
 				</div>
 				<div class="loadmore">
-						<a href="" class="btn-3" style="margin-top:30px;">Find Out More awards & Achievements</a>
+						<a href="" class="btn-3" style="margin-top:30px;">See more awards & Achievements</a>
 					</div>
 
 			</section>
 
 
 
-			<section  style="background-color:#efefef;">
+
+			<section >
 				<div class="container">
 					<div class="row">
 
@@ -744,7 +960,7 @@ workshops and orientation programms focusing on social awareness.</p>
 						        	</div>
 						        	<div class="modal-body">
 						        		<img class="img-responsive" src='{% static 'img/news/n1.jpg' %}' style=" margin:auto;" alt=""/>
-										<p>{{ obj.desc }}</p>
+
 						        	</div>
 						      </div>
 						    </div>
@@ -760,7 +976,7 @@ workshops and orientation programms focusing on social awareness.</p>
 						        	</div>
 						        	<div class="modal-body">
 						        		<img class="img-responsive" src='{% static 'img/news/n7.jpg' %}' style="margin:auto;" alt=""/>
-										<p>{{ obj.desc }}</p>
+
 						        	</div>
 						      </div>
 						    </div>
@@ -776,13 +992,12 @@ workshops and orientation programms focusing on social awareness.</p>
 						        	</div>
 						        	<div class="modal-body">
 						        		<img class="img-responsive" src='{% static 'img/news/n16.jpg' %}' style=" margin:auto;" alt=""/>
-										<p>{{ obj.desc }}</p>
 						        	</div>
 						      </div>
 						    </div>
 						 </div>
 						<!-- HEADING 1 START-->
-						<div class="col-md-12">
+						<div class="col-md-12" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
 							<div class="kf_edu2_heading1">
 								<h3>Media gallery</h3>
 							</div>
@@ -790,13 +1005,13 @@ workshops and orientation programms focusing on social awareness.</p>
 						<!-- HEADING 1 END-->
 
 						<!-- FACULTY SLIDER WRAP START-->
-						<div class="col-md-12">
+						<div class="col-md-12" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
 								<div class="item col-md-4">
 									<!-- FACULTY DES START-->
 									<div class="edu2_faculty_des">
 										<figure><img src='{% static 'img/news/n1.jpg' %}' alt=""/>
 											<figcaption>
-												<a href="#" data-toggle="modal" data-target="#modal1" ><i class="fa fa-search"></i></a>
+												<a href="#" data-toggle="modal" data-target="#modal1" ><i class="fa fa-search-plus"></i></a>
 											</figcaption>
 										</figure>
 										<div class="edu2_faculty_des2">
@@ -813,7 +1028,7 @@ workshops and orientation programms focusing on social awareness.</p>
 									<div class="edu2_faculty_des">
 										<figure><img src='{% static 'img/news/n7.jpg' %}' alt=""/>
 											<figcaption>
-												<a href="#" data-toggle="modal" data-target="#modal2"><i class="fa fa-search"></i></a>
+												<a href="#" data-toggle="modal" data-target="#modal2"><i class="fa fa-search-plus"></i></a>
 											</figcaption>
 										</figure>
 										<div class="edu2_faculty_des2">
@@ -827,10 +1042,10 @@ workshops and orientation programms focusing on social awareness.</p>
 
 								<div class="item col-md-4">
 									<!-- FACULTY DES START-->
-									<div class="edu2_faculty_des">
+									<div class="edu2_faculty_des" >
 										<figure><img src='{% static 'img/news/n16.jpg' %}' alt=""/>
 											<figcaption>
-												<a href="#" data-toggle="modal" data-target="#modal3"><i class="fa fa-search"></i></a>
+												<a href="#" data-toggle="modal" data-target="#modal3"><i class="fa fa-search-plus"></i></a>
 											</figcaption>
 										</figure>
 										<div class="edu2_faculty_des2">
@@ -844,146 +1059,21 @@ workshops and orientation programms focusing on social awareness.</p>
 						</div>
 						<!-- FACULTY SLIDER WRAP END-->
 						<div class="loadmore">
-							<a href="/media" class="btn-3">Find Out More News Media</a>
+							<a href="/media" class="btn-3">See more News Media</a>
 						</div>
 					</div>
 				</div>
 			</section>
 
 
-			<!--GALLERY SECTION START-->
-			<section class="kode-gallery-section">
-				<!-- HEADING 2 START-->
-                <div class="col-md-12">
-                    <div class="kf_edu2_heading2">
-                        <h3><a href="our-gallery.html">Our Gallery</a></h3>
-						<p>Student gallery of the year past graduated passouts</p>
-                    </div>
-                </div>
-                <!-- HEADING 2 END-->
-                <!-- EDU2 GALLERY WRAP START-->
-                <div class="edu2_gallery_wrap gallery">
-                   
-                    <!-- EDU2 GALLERY DES START-->
-                    <div class="gallery3">
-                    
-                        <div class="filterable-item all 2 1 9 col-md-3 col-sm-4 col-xs-12 no_padding">
-                            <div class="edu2_gallery_des">
-                                <figure>
-                                    <img alt="" src="extra-images/home-gallery1.jpg">
-                                    <figcaption>
-                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery1.jpg"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-link"></i></a>
-                                        <h5>Lorem Ipsum Proin</h5>
-                                        <p>Convocation</p>
-                                    </figcaption>
-                                </figure>
-                            </div>	
-                        </div>
-                        <div class="filterable-item all 3 2 1 col-md-3 col-sm-4 col-xs-12 no_padding">
-                            <div class="edu2_gallery_des">
-                                <figure>
-                                    <img alt="" src="extra-images/home-gallery2.jpg">
-                                    <figcaption>
-                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery2.jpg"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-link"></i></a>
-                                        <h5>Lorem Ipsum Proin</h5>
-                                        <p>Convocation</p>
-                                    </figcaption>
-                                </figure>
-                            </div>	
-                        </div>
-                        <div class="filterable-item all 4 2 9 col-md-3 col-sm-4 col-xs-12 no_padding">
-                            <div class="edu2_gallery_des">
-                                <figure>
-                                    <img alt="" src="extra-images/home-gallery3.jpg">
-                                    <figcaption>
-                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery3.jpg"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-link"></i></a>
-                                        <h5>Lorem Ipsum Proin</h5>
-                                        <p>Convocation</p>
-                                    </figcaption>
-                                </figure>
-                            </div>	
-                        </div>
-                        <div class="filterable-item all 9 8 7 col-md-3 col-sm-4 col-xs-12 no_padding">
-                            <div class="edu2_gallery_des">
-                                <figure>
-                                    <img alt="" src="extra-images/home-gallery4.jpg">
-                                    <figcaption>
-                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery4.jpg"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-link"></i></a>
-                                        <h5>Lorem Ipsum Proin</h5>
-                                        <p>Convocation</p>
-                                    </figcaption>
-                                </figure>
-                            </div>	
-                        </div>
-                        <div class="filterable-item all 3 2 4 col-md-3 col-sm-4 col-xs-12 no_padding">
-                            <div class="edu2_gallery_des">
-                                <figure>
-                                    <img alt="" src="extra-images/home-gallery5.jpg">
-                                    <figcaption>
-                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery5.jpg"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-link"></i></a>
-                                        <h5>Lorem Ipsum Proin</h5>
-                                        <p>Convocation</p>
-                                    </figcaption>
-                                </figure>
-                            </div>	
-                        </div>
-                        <div class="filterable-item all 4 5 7 col-md-3 col-sm-4 col-xs-12 no_padding">
-                            <div class="edu2_gallery_des">
-                                <figure>
-                                    <img alt="" src="extra-images/home-gallery6.jpg">
-                                    <figcaption>
-                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery6.jpg"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-link"></i></a>
-                                        <h5>Lorem Ipsum Proin</h5>
-                                        <p>Convocation</p>
-                                    </figcaption>
-                                </figure>
-                            </div>	
-                        </div>
-                        <div class="filterable-item all 3 5 7 9 col-md-3 col-sm-4 col-xs-12 no_padding">
-                            <div class="edu2_gallery_des">
-                                <figure>
-                                    <img alt="" src="extra-images/home-gallery7.jpg">
-                                    <figcaption>
-                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery7.jpg"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-link"></i></a>
-                                        <h5>Lorem Ipsum Proin</h5>
-                                        <p>Convocation</p>
-                                    </figcaption>
-                                </figure>
-                            </div>	
-                        </div>
-                        <div class="filterable-item all 2 4 6 8 col-md-3 col-sm-4 col-xs-12 no_padding">
-                            <div class="edu2_gallery_des">
-                                <figure>
-                                    <img alt="" src="extra-images/home-gallery3.jpg">
-                                    <figcaption>
-                                        <a data-rel="prettyPhoto[gallery2]" href="extra-images/home-gallery3.jpg"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-link"></i></a>
-                                        <h5>Lorem Ipsum Proin</h5>
-                                        <p>Convocation</p>
-                                    </figcaption>
-                                </figure>
-                            </div>	
-                        </div>
-                    </div>
-                    
-                <!-- EDU2 GALLERY WRAP END-->
-                </div>
-                <div class="loadmore">
-						<a href="our-gallery.html" class="btn-3">Load More</a>
-					</div>
-			</section>
-			<!--GALLERY SECTION END-->
+
+
+
+
 
 
 			<!--COUNTER SECTION START-->
-			<section class="edu2_counter_wrap">
+			<section class="edu2_counter_wrap" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
 				<div class="container">
 					<!--EDU2 COUNTER DES START-->
 					<div class="edu2_counter_des">
@@ -1020,7 +1110,7 @@ workshops and orientation programms focusing on social awareness.</p>
 
 
 			<!--OUR TESTEMONIAL WRAP START-->
-			<section>
+			<section data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
 				<div class="container">
 					<div class="row">
 						<!-- HEADING 2 START-->
@@ -1109,13 +1199,13 @@ workshops and orientation programms focusing on social awareness.</p>
 						<!-- TESTEMONIAL SLIDER WRAP END-->
 					</div>
 					<div class="loadmore" style="margin-top:30px;">
-						<a href="/photos" class="btn-3">Find Out More Reviews</a>
+						<a href="/photos" class="btn-3"> See more Reviews</a>
 					</div>
 				</div>
 			</section>
 			<!--OUR TESTEMONIAL WRAP END-->
 
-			<section style="background-color:#efefef;">
+			<section style="background-color:#efefef;" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6">
@@ -1133,7 +1223,7 @@ workshops and orientation programms focusing on social awareness.</p>
 
 						<div class="col-md-6">
 							<div class="kf_edu2_heading1">
-								<h3>Earlier Posts</h3>
+								<h3>Blog Posts</h3>
 							</div>
 							 <div class="widget widget-recent-posts">
                                     <ul class="sidebar_rpost_des">
@@ -1158,6 +1248,7 @@ workshops and orientation programms focusing on social awareness.</p>
 		</div>
 
 
+		<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
 
 
@@ -1183,14 +1274,14 @@ workshops and orientation programms focusing on social awareness.</p>
                             <div class="widget widget-tag-cloud">
                                 <h5>Quick Links</h5>
                                 <ul>
-                                    <li><a href="#">The Person</a></li>
-                                    <li><a href="#">Our E-Solutions</a></li>
-                                    <li><a href="#">Gallery</a></li>
-                                    <li><a href="#">Videos</a></li>
+                                    <li><a href="/sandip-gund">The Person</a></li>
+                                    <li><a href="/e-solutions">Our E-Solutions</a></li>
+                                    <li><a href="/our-gallery">Gallery</a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCDpMWhcmmWQzQYJHHcxl41A" target="_blank">Videos</a></li>
                                     <li><a href="#">Innovations</a></li>
-                                    <li><a href="#">Media</a></li>
+                                    <li><a href="/media">Media</a></li>
                                     <li><a href="#">On Demand Training</a></li>
-                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="/blog">Blog</a></li>
                                 </ul>
 
                             </div>
@@ -1204,16 +1295,13 @@ workshops and orientation programms focusing on social awareness.</p>
 								<h5>Follow Us On</h5>
 
 								<div class="row">
-									<div class="col-md-12">
-										<a href="#"><img src="./images/fb.png" height="50" width="50"/></a>
-										<a href="#"><img src="./images/insta.png" height="50" width="50"/></a>
-										<a href="#"><img src="./images/utube.png" height="50" width="50"/></a>
+									<div class="col-md-12 social1">
+										<a href="#"><img src='{% static 'img/fb.png' %}' alt=""/  ></a>
+										<a href="#"><img src='{% static 'img/insta.png' %}' alt=""/  ></a>
+										<a href="https://www.youtube.com/channel/UCDpMWhcmmWQzQYJHHcxl41A"><img src='{% static 'img/utube.png' %}' alt=""/  ></a>
 									</div>
-								</div>
-								<div class="row">
-
-									<div class="col-md-12">
-										<div class="g-ytsubscribe" data-channelid="UC2rxF1kp2XPxAeMWj3o9d_Q" data-layout="default" data-count="default"></div>
+									<div class="col-md-12" style="margin-top:20px;">
+										<div class="g-ytsubscribe" data-channelid="UCDpMWhcmmWQzQYJHHcxl41A" data-layout="default" data-count="default"></div>
 									</div>
 								</div>
 							</div>
@@ -1234,8 +1322,6 @@ workshops and orientation programms focusing on social awareness.</p>
 						<!--EDU2 FOOTER CONTANT DES END-->
 					</div>
 				</div>
-
-
 		</footer>
 		<!--FOOTER END-->
 
@@ -1308,6 +1394,54 @@ workshops and orientation programms focusing on social awareness.</p>
 
 <script src="https://apis.google.com/js/platform.js"></script>
 
+	<script>
+	(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0&appId=1222157967920151&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+$(document).ready(function(){
+     $(window).scroll(function () {
+            if ($(this).scrollTop() > 400) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        $('#back-to-top').click(function () {
+            $('#back-to-top').tooltip('hide');
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+
+        $('#back-to-top').tooltip('show');
+
+});
+
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+
 </body>
+<style>
+	.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+}
+
+</style>
 </html>
 {% endblock content %}

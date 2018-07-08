@@ -499,6 +499,7 @@ section,
 .nav_2 ul li a:hover{
 	color: #fff;
 }
+
 /*banner*/
 .edu2_main_bn_wrap.banner_2 figure figcaption {
     left: 21%;
@@ -1404,7 +1405,7 @@ section,
 .edu2_gallery_wrap{
 	float: left;
 	width: 100%;
-	background-color: #333333;
+	//background-color: #00b8e6;
 	margin-bottom: 40px;
 	position:relative;
 }
@@ -1430,6 +1431,9 @@ section,
 .edu2_gallery_wrap .gallery3{
 	float:left;
 	width:100%;
+}
+.edu2_gallery_wrap .gallery3:hover{
+	opacity:0.8;
 }
 .edu2_gallery_des{
 	float: left;
@@ -1559,6 +1563,12 @@ section,
 	float: left;
 	margin-bottom: 30px;
 	width: 100%;
+}
+.edu2_faculty_des img{
+	height:300px;
+	 object-fit:contain;
+	width: 100%;
+	background-color: #fcfcfc;
 }
 .edu2_faculty_des:hover{
 	box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);
@@ -5370,7 +5380,7 @@ section,
     background: #ccc none repeat scroll 0 0;
     font-size: 26px;
     height: 50px;
-    left: 20px;
+    right: 20px;
     line-height: 48px;
     position: absolute;
     text-align: center;
@@ -5436,6 +5446,7 @@ section,
 	background-color:#fff;
 	padding:30px 45px 30px 45px;
 	text-align:center;
+	opacity:1;
 }
 .user-box h2{
 	font-size:22px;
@@ -5880,4 +5891,24 @@ input:checked + .radio-value {
 }
 .user-box1-footer a{
 	color:#72c8fa;
+}
+.reg_photo{
+background-image: url("/static/img/r3.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+padding:80px;
+}
+.social ul li a img{
+    border-radius: 50%;
+}
+.social ul li a img:hover{
+    opacity:0.6;
+}
+.social1 a img{
+    border-radius: 50%;
+    height:50px;
+    width:50px;
+}
+.social1 a img:hover{
+    opacity:0.6;
 }

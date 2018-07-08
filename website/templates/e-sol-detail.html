@@ -57,6 +57,9 @@
 
 <body>
 
+    <div class="kode_wrapper">
+
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -68,49 +71,6 @@
 
 
 
-	<!--KF KODE WRAPPER WRAP START-->
-    <div class="kode_wrapper">
-		<!-- SIGNIN MODEL START -->
-		<div class="modal fade" id="signin-box" tabindex="-1" role="dialog">
-			<div class="modal-dialog">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<div class="modal-content">
-					<div class="user-box">
-						<h2>Register for free counseling</h2>
-						<!--FORM FIELD START-->
-						<form method='POST' action='/add-free-counselling/' enctype='multipart/form-data'>
-{% csrf_token %}
-						<div class="form">
-							<div class="input-container">
-								<span>
-									<h6 align="left" >Name:</h6>
-								{{form.name}}
-									</span>
-							</div>
-
-							<div class="input-container">
-								<h6 align="left">E-mail:</h6>
-								{{form.email}}
-							</div>
-							<div class="input-container">
-								<h6 align="left">Mobile No.:</h6>
-								{{form.mobile}}
-							</div>
-
-							<div class="input-container">
-								<button class="btn-style">Register</button>
-							</div>
-						</div>
-						</form>
-						<!--FORM FIELD END-->
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-    <!-- SIGNIN MODEL END -->
-
 
 
     	<!--HEADER START-->
@@ -120,16 +80,15 @@
 	    		<div class="container">
 	    			<div class="row">
 	    				<div class="col-md-4" style="margin-top: 10px; text-color: #ffffff;">
-	    					<h4>Contact us for free counseling</h4>
+	    					<h4><button class="btn btn-info" onclick="parent.location='/#form'" >Register</button> for free counseling</h4>
 	    				</div>
-	    				<div class="col-md-8 hide-email" style="margin-top: -20px; text-color: #ffffff;">
+	    				<div class="col-md-8 hide-email social" style="margin-top: -20px; text-color: #ffffff;">
     						<ul class="login_wrap">
     							<li class="email"><h6><i class="fa fa-envelope"></i>E-mail: poransathikahipan@gmail.com</h6></li>
     							<li>  <h2>    </h2> </li>
-    							<li><h6><i class="fa fa-phone"></i> Mb: 92730678</h6></li>
-								<li><a href="#" data-toggle="modal" data-target="#signin-box"><i class="fa fa-sign-in"></i>Sign In</a></li>
-    							<li><a href=""><img src="./images/fb.png" height="35" width="35"></li>
-    							<li><a href=""><img src="./images/insta.png" height="35" width="35"></li>
+    							<li><h6><i class="fa fa-phone"></i> Mb: 9273480678</h6></li>
+    							<li><a href=""><img src='{% static 'img/insta.png' %}' width="35"></li>
+    							<li><a href=""><img src='{% static 'img/fb.png' %}' width="35"></li>
     						</ul>
 	    				</div>
 	    			</div>
@@ -189,6 +148,23 @@
 		</header>
 
         <div class="kf_content_wrap">
+
+
+			<div class="kf_inr_banner">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<!--KF INR BANNER DES Wrap Start-->
+							<div class="kf_inr_ban_des">
+								<div class="inr_banner_heading">
+									<h3>E-Solutions & Services</h3>
+								</div>
+							</div>
+							<!--KF INR BANNER DES Wrap End-->
+						</div>
+					</div>
+				</div>
+			</div>
 
 
             <section style="background-color: #ccc">
@@ -737,16 +713,15 @@
                             <div class="widget widget-tag-cloud">
                                 <h5>Quick Links</h5>
                                 <ul>
-                                    <li><a href="#">Science</a></li>
-                                    <li><a href="#">Development</a></li>
-                                    <li><a href="#">Fine Arts</a></li>
-                                    <li><a href="#">Research</a></li>
-                                    <li><a href="#">Admissions</a></li>
-                                    <li><a href="#">PHD</a></li>
-                                    <li><a href="#">History &amp; Politics</a></li>
-                                    <li><a href="#">Sports</a></li>
+                                    <li><a href="/sandip-gund">The Person</a></li>
+                                    <li><a href="/e-solutions">Our E-Solutions</a></li>
+                                    <li><a href="/our-gallery">Gallery</a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCDpMWhcmmWQzQYJHHcxl41A" target="_blank">Videos</a></li>
+                                    <li><a href="#">Innovations</a></li>
+                                    <li><a href="/media">Media</a></li>
+                                    <li><a href="#">On Demand Training</a></li>
+                                    <li><a href="/blog">Blog</a></li>
                                 </ul>
-
                             </div>
                             <!--KF SIDE BAR TAG CLOUD WRAP END-->
 						</div>
@@ -758,10 +733,13 @@
 								<h5>Follow Us On</h5>
 
 								<div class="row">
-									<div class="col-md-12">
-										<a href="#"><img src="./images/fb.png" height="50" width="50"/></a>
-										<a href="#"><img src="./images/insta.png" height="50" width="50"/></a>
-										<a href="#"><img src="./images/utube.png" height="50" width="50"/></a>
+									<div class="col-md-12 social1">
+										<a href="#"><img src='{% static 'img/fb.png' %}' alt=""/  ></a>
+										<a href="#"><img src='{% static 'img/insta.png' %}' alt=""/  ></a>
+										<a href="https://www.youtube.com/channel/UCDpMWhcmmWQzQYJHHcxl41A"><img src='{% static 'img/utube.png' %}' alt=""/  ></a>
+									</div>
+									<div class="col-md-12" style="margin-top:20px;">
+										<div class="g-ytsubscribe" data-channelid="UC2rxF1kp2XPxAeMWj3o9d_Q" data-layout="default" data-count="default"></div>
 									</div>
 								</div>
 							</div>
@@ -792,15 +770,11 @@
 		<div class="edu2_copyright_wrap">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3">
-						<div class="edu2_ft_logo_wrap">
-							<a href="#"><img src="extra-images/ft_logo.png" alt=""/></a>
-						</div>
-					</div>
 
-					<div class="col-md-6">
+
+					<div class="col-md-12">
 						<div class="copyright_des">
-							<span>&copy; All Rights reserved. Hand Made By <a href="#">SHOPCON</a></span>
+							<span>&copy; All Rights reserved. <i>Hand Made By</i> <a href="#">SHOPCON DEVELOPERS</a></span>
 						</div>
 					</div>
 				</div>

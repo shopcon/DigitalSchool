@@ -65,15 +65,15 @@
 	    		<div class="container">
 	    			<div class="row">
 	    				<div class="col-md-4" style="margin-top: 10px; text-color: #ffffff;">
-	    					<h4>Contact us for free counseling</h4>
+	    					<h4><button class="btn btn-info" onclick="parent.location='/#form'" >Register</button> for free counseling</h4>
 	    				</div>
-	    				<div class="col-md-8 hide-email" style="margin-top: -20px; text-color: #ffffff;">
+	    				<div class="col-md-8 hide-email social" style="margin-top: -20px; text-color: #ffffff;">
     						<ul class="login_wrap">
     							<li class="email"><h6><i class="fa fa-envelope"></i>E-mail: poransathikahipan@gmail.com</h6></li>
     							<li>  <h2>    </h2> </li>
-    							<li><h6><i class="fa fa-phone"></i> Mb: 92730678</h6></li>
-    							<li><a href=""><img src="./images/fb.png" height="35" width="35"></li>
-    							<li><a href=""><img src="./images/insta.png" height="35" width="35"></li>
+    							<li><h6><i class="fa fa-phone"></i> Mb: 9273480678</h6></li>
+    							<li><a href=""><img src='{% static 'img/insta.png' %}' width="35"></li>
+    							<li><a href=""><img src='{% static 'img/fb.png' %}' width="35"></li>
     						</ul>
 	    				</div>
 	    			</div>
@@ -111,7 +111,7 @@
 		                            	<ul>
                                             <li><a href="/our-gallery">Our gallery</a></li>
 		                                	<li><a href="/photos">Photos</a></li>
-		                                    <li><a target="blank" href="https://www.youtube.com/user/MrVivekBindra">Videos</a></li>
+		                                    <li><a target="blank" href="https://www.youtube.com/channel/UCDpMWhcmmWQzQYJHHcxl41A">Videos</a></li>
 		                                    <li><a href="/media">Media</a></li>
 		                                </ul>
 		                            </li>
@@ -149,6 +149,7 @@
 
 
 
+		<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
 
 
@@ -175,16 +176,14 @@
                             <div class="widget widget-tag-cloud">
                                 <h5>Quick Links</h5>
                                 <ul>
-                                   <ul>
-                                    <li><a href="#">The Person</a></li>
-                                    <li><a href="#">Our E-Solutions</a></li>
-                                    <li><a href="#">Gallery</a></li>
-                                    <li><a href="#">Videos</a></li>
+                                    <li><a href="/sandip-gund">The Person</a></li>
+                                    <li><a href="/e-solutions">Our E-Solutions</a></li>
+                                    <li><a href="/our-gallery">Gallery</a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCDpMWhcmmWQzQYJHHcxl41A" target="_blank">Videos</a></li>
                                     <li><a href="#">Innovations</a></li>
-                                    <li><a href="#">Media</a></li>
+                                    <li><a href="/media">Media</a></li>
                                     <li><a href="#">On Demand Training</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                </ul>
+                                    <li><a href="/blog">Blog</a></li>
                                 </ul>
 
                             </div>
@@ -198,10 +197,13 @@
 								<h5>Follow Us On</h5>
 
 								<div class="row">
-									<div class="col-md-12">
-										<a href="#"><img src="./images/fb.png" height="50" width="50"/></a>
-										<a href="#"><img src="./images/insta.png" height="50" width="50"/></a>
-										<a href="#"><img src="./images/utube.png" height="50" width="50"/></a>
+									<div class="col-md-12 social1">
+										<a href="#"><img src='{% static 'img/fb.png' %}' alt=""/  ></a>
+										<a href="#"><img src='{% static 'img/insta.png' %}' alt=""/  ></a>
+										<a href="https://www.youtube.com/channel/UCDpMWhcmmWQzQYJHHcxl41A"><img src='{% static 'img/utube.png' %}' alt=""/  ></a>
+									</div>
+									<div class="col-md-12" style="margin-top:20px;">
+										<div class="g-ytsubscribe" data-channelid="UC2rxF1kp2XPxAeMWj3o9d_Q" data-layout="default" data-count="default"></div>
 									</div>
 								</div>
 							</div>
@@ -292,5 +294,52 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 
+
+
+<script>
+	(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0&appId=1222157967920151&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+$(document).ready(function(){
+     $(window).scroll(function () {
+            if ($(this).scrollTop() > 400) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        $('#back-to-top').click(function () {
+            $('#back-to-top').tooltip('hide');
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+
+        $('#back-to-top').tooltip('show');
+
+});
+
+</script>
+
+
+
 </body>
+<style>
+	.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+}
+
+</style>
+
 </html>

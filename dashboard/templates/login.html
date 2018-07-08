@@ -21,33 +21,36 @@
   <h1>Our Gallery</h1>
 </div>
 
-<div class="container" >
-<form method='POST' action='' enctype='multipart/form-data'>
-{% csrf_token %}
-	<div class="well" id="box">
-	    <h2 style="border-bottom:1px solid black" id="design"><strong>Admin Login</strong></h2>
-		<div class="form-group">
-			<span>
-				Username:
-				{{ form.username }}
-			</span>
+<div class="container">
+<div class="row">
+	<div class="col-md-6 col-sm-12 col-md-offset-3 outline">
+		<form method='POST' action='' enctype='multipart/form-data'>
+		{% csrf_token %}
+			<div class="well" id="box">
+				<h2 style="border-bottom:1px solid black" id="design"><strong>Admin Login</strong></h2>
+				<div class="form-group">
+					<span>
+						Username:
+						{{ form.username }}
+					</span>
 
-			<br> <br>
+					<br> <br>
 
-			<span>
-				Password:
-				{{ form.password }}
-			</span>
+					<span>
+						Password:
+						{{ form.password }}
+					</span>
 
-		</div>
+				</div>
+			</div>
+		<button type='submit' onclick="parent.location=''"> Login </button>
+		</form>
 	</div>
-<button type='submit' onclick="parent.location=''"> Login </button>
-</form>
+</div>
+
 
 
 </div>
-	<h1>{{ title }}</h1>
-
 </body>
 </html>
 
